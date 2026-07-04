@@ -56,7 +56,7 @@ const courses = [
         credits: 2,
         certificate: 'Web and Computer Programming',
         description: 'This course introduces encapsulation, inheritance, and polymorphism.',
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',

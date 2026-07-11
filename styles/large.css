@@ -1,4 +1,4 @@
-@media (min-width: 32.5rem) {
+@media (min-width: 48rem) {
   body {
     padding: 0 20px;
   }
@@ -24,25 +24,27 @@
     border-bottom: 4px solid transparent;
   }
 
-  main {
+  #member-container.grid-layout {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0;
   }
 
-  main h1, .courses {
-    grid-column: 1 / 3;
-  }
-
-  .course-list {
-    display: flex;
+  footer {
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
   }
 
-  .course-card {
-    flex: 1 1 calc(33.333% - 10px);
-    min-width: 120px;
+  .footer-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-meta {
+    text-align: right;
   }
 }

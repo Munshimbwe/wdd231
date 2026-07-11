@@ -3,75 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce - Portal Home</title>
-    <meta name="description" content="Chamber of Commerce business discovery engine and dynamic community resource workspace.">
-    <meta name="author" content="Student Name">
+    <title>Kabwe Chamber of Commerce - Portal Home</title>
+    <meta name="description" content="Kabwe Chamber of Commerce business discovery engine and dynamic community resource workspace.">
+    <meta name="author" content="Munshimbwe Kafwanka">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
+    <script src="scripts/menu.js" defer></script>
     <script src="scripts/module.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
     <header>
         <img src="images/home.svg" alt="Chamber of Commerce Logo" class="logo">
-        <span>Chamber Network</span>
+        <span>Kabwe Chamber of Commerce</span>
         <button id="menu-toggle">☰</button>
     </header>
 
     <nav id="nav-menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="chamber.html" class="active">Chamber</a></li>
-            <li><a href="project.html">Final</a></li>
+            <li><a href="chamber.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Chamber of Commerce</h1>
+        <h1>Kabwe Chamber of Commerce</h1>
         
         <section class="hero-banner">
             <h2>Welcome to Our Community</h2>
             <p>Empowering local commerce, driving innovation, and connecting businesses across the region. Discover our networks and corporate sponsorship portfolios today.</p>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
 
         <section class="weather-widget">
             <h2>Current Weather</h2>
             <div class="weather-content">
                 <div class="weather-now">
-                    <span class="temp">--&deg;C</span>
-                    <span class="condition">Loading conditions...</span>
+                    <span class="temp">22&deg;C</span>
+                    <span class="condition">Partly Cloudy</span>
                 </div>
                 <div class="forecast-grid">
-                    <div class="day">Day 1: --&deg;</div>
-                    <div class="day">Day 2: --&deg;</div>
-                    <div class="day">Day 3: --&deg;</div>
+                    <div class="day">Mon: 24&deg;</div>
+                    <div class="day">Tue: 21&deg;</div>
+                    <div class="day">Wed: 23&deg;</div>
                 </div>
             </div>
         </section>
 
-        <section class="directory-section">
-            <h2>Premium Spotlights</h2>
-            <div class="view-toggles">
-                <button id="grid-view-btn" class="filter-btn active-filter">Grid View</button>
-                <button id="list-view-btn" class="filter-btn">List View</button>
-            </div>
-            <div id="member-container" class="course-list">
-                <div class="course-card completed">
-                    <h3>The Eyekhon Radical Pty Ltd</h3>
-                    <p>Gold Tier Member</p>
-                    <a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Site</a>
-                </div>
-                <div class="course-card completed">
-                    <h3>Innovation Hub</h3>
-                    <p>Silver Tier Member</p>
-                    <a href="https://example.com" target="_blank" rel="noopener noreferrer">Visit Site</a>
-                </div>
-            </div>
+        <section class="spotlights-section">
+            <h2>Business Spotlights</h2>
+            <div id="spotlight-container" class="course-list"></div>
         </section>
     </main>
 
@@ -93,7 +80,7 @@
                 </svg>
             </a>
         </div>
-        <p>&copy; <span id="currentyear"></span> ⚒️ Chamber of Commerce, Kabwe Zambia ⚒️</p>
+        <p>&copy; <span id="currentyear"></span> ⚒️ Kabwe Chamber of Commerce, Kabwe, Zambia ⚒️</p>
         <p id="lastModified"></p>
     </footer>
 

@@ -1,39 +1,40 @@
-const members = [
-  { name: "Summit Tech Solutions", tier: "Gold", phone: "801-555-0143", url: "https://example.com" },
-  { name: "Wasatch Brew & Bakery", tier: "Silver", "phone": "801-555-0211", url: "https://example.com" },
-  { name: "Deseret Web Designs", tier: "Gold", "phone": "801-555-0399", url: "https://example.com" },
-  { name: "Pioneer Law Group", tier: "Bronze", "phone": "801-555-0454", url: "https://example.com" },
-  { name: "Beehive Fitness Center", tier: "Silver", "phone": "801-555-0588", url: "https://example.com" },
-  { name: "Great Basin Logistics", tier: "Bronze", "phone": "801-555-0612", url: "https://example.com" },
-  { name: "Intermountain Retailers", tier: "Gold", "phone": "801-555-0741", url: "https://example.com" },
-  { name: "Sundance Digital Media", tier: "Silver", "phone": "801-555-0833", url: "https://example.com" },
-  { name: "Copper Rim Financial", tier: "Gold", "phone": "801-555-0922", url: "https://example.com" },
-  { name: "Timpanogos Auto Care", tier: "Bronze", "phone": "801-555-1077", url: "https://example.com" },
-  { name: "Red Rock Creative Agency", tier: "Silver", "phone": "801-555-1150", url: "https://example.com" },
-  { name: "Zion Coffee Roasters", tier: "Bronze", "phone": "801-555-1266", url: "https://example.com" },
-  { name: "Alta Insurance Group", tier: "Silver", "phone": "801-555-1391", url: "https://example.com" },
-  { name: "Sagebrush Property Management", tier: "Gold", "phone": "801-555-1411", url: "https://example.com" },
-  { name: "Uinta Outdoor Gear", tier: "Bronze", "phone": "801-555-1522", url: "https://example.com" }
-];
-
 const container = document.querySelector('#member-container');
 const gridBtn = document.querySelector('#grid-view-btn');
 const listBtn = document.querySelector('#list-view-btn');
+const dataUrl = 'data/directory.json';
 
-function renderDirectory() {
-    container.innerHTML = '';
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('course-card');
-        if (member.tier === 'Gold' || member.tier === 'Silver') {
-            card.classList.add('completed');
+async function getMembers() {
+    try {
+        const response = await fetch(dataUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP network error encountered: ${response.status}`);
         }
+        const data = await response.json();
+        renderDirectory(data);
+    } catch (error) {
+        container.innerHTML = `<p class="error-msg">Unable to process directory data list at this time.</p>`;
+    }
+}
+
+function renderDirectory(memberArray) {
+    container.innerHTML = '';
+    memberArray.forEach(member => {
+        const card = document.createElement('div');
+        card.classList.add('directory-card');
         
         card.innerHTML = `
-            <h3>${member.name}</h3>
-            <p>${member.tier} Tier Member</p>
-            <p>${member.phone}</p>
-            <a href="${member.url}" target="_blank" rel="noopener noreferrer">Visit Website</a>
+            <div class="card-header">
+                <h3>${member.name}</h3>
+                <p class="tagline">${member.tagline}</p>
+            </div>
+            <div class="card-body">
+                <div class="card-img-placeholder"></div>
+                <div class="card-info">
+                    <p><strong>EMAIL:</strong> ${member.email}</p>
+                    <p><strong>PHONE:</strong> ${member.phone}</p>
+                    <p><strong>URL:</strong> ${member.url}</p>
+                </div>
+            </div>
         `;
         container.appendChild(card);
     });
@@ -53,5 +54,6 @@ listBtn.addEventListener('click', () => {
     gridBtn.classList.remove('active-filter');
 });
 
-container.classList.add('grid-layout');
-renderDirectory();
+document.addEventListener('DOMContentLoaded', () => {
+    getMembers();
+});

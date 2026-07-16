@@ -4,15 +4,15 @@
   }
 
   #menu-toggle {
-    display: none;
+    display: none !important;
   }
 
   #nav-menu {
-    display: block;
+    display: block !important;
   }
 
   nav ul {
-    display: flex;
+    display: flex !important;
   }
 
   nav li {

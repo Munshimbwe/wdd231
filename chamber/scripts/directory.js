@@ -10,7 +10,8 @@ async function getMembers() {
             throw new Error(`HTTP network error encountered: ${response.status}`);
         }
         const data = await response.json();
-        renderDirectory(data);
+        const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
+        renderDirectory(sortedData);
     } catch (error) {
         container.innerHTML = `<p class="error-msg">Unable to process directory data list at this time.</p>`;
     }
@@ -23,18 +24,13 @@ function renderDirectory(memberArray) {
         card.classList.add('directory-card');
         
         card.innerHTML = `
-            <div class="card-header">
-                <h3>${member.name}</h3>
-                <p class="tagline">${member.tagline}</p>
+            <div class="card-logo-container">
+                <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
             </div>
-            <div class="card-body">
-                <div class="card-img-placeholder"></div>
-                <div class="card-info">
-                    <p><strong>EMAIL:</strong> ${member.email}</p>
-                    <p><strong>PHONE:</strong> ${member.phone}</p>
-                    <p><strong>URL:</strong> ${member.url}</p>
-                </div>
-            </div>
+            <h3 class="member-name" style="margin: 0 0 10px 0; font-size: 1.2rem; color: var(--text-dark); text-align: center;">${member.name}</h3>
+            <p class="address-line">${member.address || member.tagline}</p>
+            <p class="phone-line">${member.phone}</p>
+            <a href="${member.url}" target="_blank" rel="noopener noreferrer" class="member-link">${member.url}</a>
         `;
         container.appendChild(card);
     });

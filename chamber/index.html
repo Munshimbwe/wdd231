@@ -3,61 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory - Kabwe Chamber of Commerce</title>
-    <meta name="description" content="Business discovery engine and member directory for the Kabwe Chamber of Commerce.">
-    <meta name="author" content="Munshimbwe Kafwanka">
-    <meta property="og:title" content="Directory - Kabwe Chamber of Commerce">
+    <title>Home - Student Portal</title>
+    <meta name="description" content="Student profile page and course track repository hub.">
+    <meta name="author" content="Marie Martínez">
+    <meta property="og:title" content="Home - Student Portal">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="Explore local business networks and corporate member directory.">
-    <meta property="og:image" content="https://example.com">
+    <meta property="og:url" content="https://munshimbwe.github.io/wdd231/index.html">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/images/og-previewcard1.webp">
+    <meta property="og:description" content="Student profile page and course track repository hub.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/small.css">
     <script src="scripts/menu.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/portal.js" defer></script>
 </head>
 <body>
 
     <header>
-        <img src="images/home.svg" alt="Chamber of Commerce Logo" class="logo">
-        <span>Kabwe Chamber of Commerce</span>
+        <img src="images/home.svg" alt="Portal Logo" class="logo" width="40" height="40">
+        <span>Munshimbwe Kafwanka</span>
         <div class="header-controls">
             <button id="dark-toggle" aria-label="Toggle Dark Mode">🌓</button>
-            <button id="menu-toggle">☰</button>
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
         </div>
     </header>
 
-    <nav id="nav-menu">
+    <nav id="nav-menu" aria-label="Main Navigation">
         <ul>
-            <li><a href="chamber.html">Home</a></li>
-            <li><a href="directory.html" class="active">Directory</a></li>
-            <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="chamber.html">Chamber</a></li>
+            <li><a href="project.html">Final</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Directory</h1>
+        <h1>Home</h1>
         
-        <div class="view-toggles">
-            <button id="grid-view-btn" class="filter-btn active-filter">Grid</button>
-            <button id="list-view-btn" class="filter-btn">List</button>
-        </div>
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Massa Facilisis Per Purus Si Imperdiet Curae Amet. Et Fames Lorem Mi Phasellus Congue Nascetur Enim Consectetur Sociosqu Natoque Risus. Odio Vehicula Libero Nisl Viverra Augue Commodo Pretium Vivamus At Duis Magna. Quam Fringilla Convallis Ridiculus Malesuada Accumsan Potenti Magnis Volutpat Nulla Ipsum.</p>
+        </section>
 
-        <div id="member-container" class="grid-layout"></div>
+        <section class="photo-section">
+            <h2>Student Photo</h2>
+            <img src="images/profile.jpg" alt="Munshimbwe Kafwanka Profile Picture" class="profile-image" width="200" height="200">
+        </section>
+
+        <section class="courses">
+            <h2>Web Certificate Courses</h2>
+            <div class="view-toggles">
+                <button class="filter-btn active-filter" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="cse">CSE Course</button>
+                <button class="filter-btn" data-filter="wdd">WDD Course</button>
+            </div>
+            <div id="course-container" class="course-list"></div>
+            <p class="credits">The total credits for courses listed above is <span id="total-credits">0</span></p>
+        </section>
     </main>
 
     <footer>
         <div class="footer-contact">
-            <strong>Kabwe Chamber of Commerce</strong>
-            <p>10 Butungwa Avenue</p>
-            <p>Kabwe, Zambia 999</p>
-            <p>info@kabwec.org</p>
-            <p>(260) 555-2300</p>
+            <strong>Munshimbwe Kafwanka Portal</strong>
+            <p>Zambia Hub</p>
         </div>
         <div class="footer-center">
             <div class="socials">
@@ -67,20 +78,22 @@
                 </svg>
             </a>
 
-
-
                 <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
                     <svg viewBox="0 0 24 24" class="social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <svg viewBox="0 0 24 24" class="social-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
+
             </div>
         </div>
         <div class="footer-meta">
-            <p>WDD231 | BYUI </p>
+            <p>WDD231 Class Project</p>
             <p>Munshimbwe Kafwanka</p>
-            <p>&copy; <span id="currentyear"></span> Kabwe Chamber of Commerce</p>
+            <p class="copyright-line">
+                <img src="https://byui.edu" alt="BYU-Idaho Icon" class="footer-favicon" width="16" height="16">
+                &copy; <span id="currentyear"></span> Munshimbwe Kafwanka Portal
+            </p>
             <p id="lastModified"></p>
         </div>
     </footer>

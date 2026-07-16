@@ -1,0 +1,11 @@
+[
+  { "name": "Summit Tech Solutions", "tagline": "Innovative software and integration vectors", "email": "info@summittech.com", "phone": "260-555-0143", "url": "summittech.com", "image":"images/summitech.webp" },
+  { "name": "Lukanga Brew & Bakery", "tagline": "Artisanal grains and regional roasts", "email": "contact@lukangabrew.com", "phone": "260-555-0211", "url": "lukangabrew.com", "image":"images/lukanga.webp" },
+  { "name": "High Ridge Web Designs", "tagline": "Standards-compliant interface construction", "email": "hello@highridge.web.com", "phone": "260-555-0399", "url": "deseretweb.com", "image": "images/highridge.webp"},
+  { "name": "Pioneer Law Group", "tagline": "Corporate advocacy and compliance council", "email": "legal@pioneerlaw.com", "phone": "260-555-0454", "url": "pioneerlaw.com", "image": "images/pioneerlaw.webp" },
+  { "name": "Grand Itabwa Fitness Center", "tagline": "Community health and athletic development", "email": "train@granditabwa.com", "phone": "260-555-0588", "url": "granditabwafit.com", "image": "images/granditabwa.webp" },
+  { "name": "Great Lake Mweru Logistics", "tagline": "Global supply chains made accessible", "email": "ship@greatlakemweru.com", "phone": "260-555-0612", "url": "greatlakemweru.com", "image": "images/greatlake.webp"},
+  { "name": "Kabwe Mall", "tagline": "Regional product networks under one roof", "email": "sales@kabwemall.com", "phone": "260-555-0741", "url": "kabwe.com", "image": "images/kabwemall.webp" },
+  { "name": "Mulungushi VVIP Security", "tagline": "We protect what matters", "email": "create@mulungushi.com", "phone": "260-555-0833", "url": "mulungushi.com", "image": "images/mulungushi.webp" },
+  { "name": "Copperbelt Financial", "tagline": "Secure wealth stewardship and planning", "email": "wealth@copperbeltfin.com", "phone": "801-555-0922", "url": "copperbelt.com", "image": "images/copperbeltfinancial.webp" }
+]

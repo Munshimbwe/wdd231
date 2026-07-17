@@ -2,13 +2,28 @@ const spotlightContainer = document.querySelector('#spotlight-container');
 const dataUrl = 'data/directory.json';
 
 async function loadSpotlights() {
+    if (!spotlightContainer) return;
+
+    spotlightContainer.innerHTML = '<div style="text-align:center; font-weight:bold; color:var(--wayfinding-orange);">Loading...</div>';
+
     try {
         const response = await fetch(dataUrl);
-        if (!response.ok) throw new Error();
+        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
         const data = await response.json();
         
-        const premiumMembers = data.filter(m => m.tier === 'Gold' || m.tier === 'Silver' || m.completed === true);
-        const shuffled = premiumMembers.sort(() => 0.5 - Math.random());
+        if (!Array.isArray(data) || data.length === 0) {
+            spotlightContainer.innerHTML = '<p>Error: JSON data is empty or not an array.</p>';
+            return;
+        }
+
+        const premiumMembers = data.filter(m => {
+            const tierLower = m.tier ? m.tier.toLowerCase() : '';
+            return tierLower === 'gold' || tierLower === 'silver' || m.completed === true;
+        });
+
+        const listToUse = premiumMembers.length > 0 ? premiumMembers : data;
+
+        const shuffled = listToUse.sort(() => 0.5 - Math.random());
         const selected = shuffled.slice(0, 2);
 
         setTimeout(() => {
@@ -29,7 +44,7 @@ async function loadSpotlights() {
         }, 50);
 
     } catch (error) {
-        spotlightContainer.innerHTML = '<p>Unable to load featured spotlights at this time.</p>';
+        spotlightContainer.innerHTML = `<p>Unable to load featured spotlights. Error details: ${error.message}</p>`;
     }
 }
 

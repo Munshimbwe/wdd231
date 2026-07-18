@@ -11,8 +11,8 @@ const apiKey = '338f3796580e881d1cd7bf5cb118394d';
 const dataUrl = 'data/directory.json';
 
 
-const weatherUrl = `https://openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=metric`;
-const forecastUrl = `https://openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=metric`;
+const weatherUrl = `//openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=imperial`;
+const forecastUrl = `//openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=imperial`;
 
 async function loadSpotlights() {
     if (!spotlightContainer) return;

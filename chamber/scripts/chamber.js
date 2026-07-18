@@ -1,11 +1,18 @@
 const spotlightContainer = document.querySelector('#spotlight-container');
 const tempDisplay = document.querySelector('.weather-now .temp');
 const condDisplay = document.querySelector('.weather-now .condition');
+const weatherNowIcon = document.querySelector('#weather-now-icon');
 const forecastContainer = document.querySelector('.forecast-grid');
 
+const lat = -14.45;
+const lon = 28.45;
+const apiKey = '338f3796580e881d1cd7bf5cb118394d';
+
 const dataUrl = 'data/directory.json';
-const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={338f3796580e881d1cd7bf5cb118394d}`;
-const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={338f3796580e881d1cd7bf5cb118394d}`;
+
+
+const weatherUrl = `https://openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=metric`;
+const forecastUrl = `https://openweathermap.org{lat}&lon=${lon}&appid=${'338f3796580e881d1cd7bf5cb118394d'}&units=metric`;
 
 async function loadSpotlights() {
     if (!spotlightContainer) return;
@@ -49,9 +56,15 @@ async function loadWeatherData() {
         if (!response.ok) throw new Error();
         const data = await response.json();
         tempDisplay.innerHTML = `${Math.round(data.main.temp)}&deg;C`;
-        condDisplay.textContent = data.weather[0].description.replace(/\b\w/g, c => c.toUpperCase());
+        const descriptionText = data.weather[0].description.replace(/\b\w/g, c => c.toUpperCase());
+        condDisplay.textContent = descriptionText;
+        if (weatherNowIcon) {
+            const iconCode = data.weather[0].icon;
+            weatherNowIcon.setAttribute('src', `https://openweathermap.org{iconCode}@2x.png`);
+            weatherNowIcon.setAttribute('alt', descriptionText);
+        }
     } catch (error) {
-        tempDisplay.textContent = '--&deg;C';
+        tempDisplay.textContent = 'no data';
         condDisplay.textContent = 'Weather sync service unavailable';
     }
 }
@@ -69,7 +82,7 @@ async function loadForecastData() {
             const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
             const dayCard = document.createElement('div');
             dayCard.classList.add('day');
-            dayCard.innerHTML = `${dayName}: ${Math.round(item.main.temp)}&deg;`;
+            dayCard.innerHTML = `${dayName}: ${Math.round(item.main.temp)}&deg;C`;
             forecastContainer.appendChild(dayCard);
         });
     } catch (error) {

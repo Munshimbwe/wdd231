@@ -326,3 +326,196 @@ header:hover .logo {
   padding: 10px 0;
   margin: 0;
 }
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode main, 
+body.dark-mode header, 
+body.dark-mode footer, 
+body.dark-mode section {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #333333;
+}
+body.dark-mode a {
+    color: #bb86fc;
+}
+
+.weather-card {
+    background-color: #ffffff;
+    border: 2px solid #23a6d5;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 320px;
+    margin: 1rem auto;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.weather-header p {
+    font-size: 1.1rem;
+    color: #333333;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+}
+
+.weather-card .temp {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-card .weather-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    display: none;
+}
+
+.weather-card .condition {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444444;
+    margin-top: 0.5rem;
+}
+
+body.dark-mode .weather-card {
+    background-color: #1e1e1e;
+    border-color: #0a0411;
+}
+
+body.dark-mode .weather-header p,
+body.dark-mode .weather-card .temp,
+body.dark-mode .weather-card .condition {
+    color: #ffffff;
+}
+
+#spotlight-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+#spotlight-container.fade-out {
+    opacity: 0;
+}
+
+.directory-card img {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 1.25rem auto;
+    padding: 0.5rem;
+    object-fit: contain;
+}
+
+.card-header h3 {
+    margin-bottom: 1rem;
+}
+
+.card-header .tagline {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.lowerDiv img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 6px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.grid section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background-color: var(--card-background, #ffffff);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+body.dark-mode .grid section {
+    border-color: #333333;
+}
+
+.hero-banner {
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('../images/chamber-hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-overlay {
+    text-align: center;
+    padding: 2.5rem;
+    max-width: 750px;
+    color: #ffffff;
+}
+
+.hero-overlay h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-overlay p {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #23a6d5;
+    color: #ffffff;
+    padding: 0.85rem 2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #1a8bb5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .hero-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/chamber-hero.webp');
+}

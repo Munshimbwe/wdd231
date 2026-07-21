@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - My Homepage</title>
-    <meta name="description" content="Student profile page and course track repository hub.">
+    <title>Kabwe Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
     <meta name="author" content="Munshimbwe Kafwanka">
-    <meta property="og:title" content="Home - My Homepage">
+    <meta property="og:title" content="Kabwe Chamber of Commerce - Home">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/index.html">
-    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/og-previewcard1.webp">
-    <meta property="og:description" content="Student profile page and course track repository hub.">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.jpg">
+    <meta property="og:description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
-    <link rel="stylesheet" href="styles/small.css">
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/portal.js" defer></script>
+    <script type="module" src="scripts/chamber.mjs"></script>
+    <script type="module" src="scripts/main.mjs" defer></script>
+    <script type="module" src="scripts/weather.mjs" defer></script>
 </head>
 <body>
 
     <header>
-        <img src="images/home.svg" alt="Portal Logo" class="logo" width="40" height="40">
-        <span>Munshimbwe Kafwanka</span>
+        <img src="images/favicon.ico" alt="Chamber Logo" class="logo" width="40" height="40">
+        <span>Kabwe Chamber of Commerce</span>
         <div class="header-controls">
             <button id="dark-toggle" aria-label="Toggle Dark Mode">🌓</button>
             <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
@@ -34,65 +34,69 @@
 
     <nav id="nav-menu" aria-label="Main Navigation">
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="chamber.html">Chamber</a></li>
-            <li><a href="project.html">Final</a></li>
+            <li><a href="chamber.html" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
         </ul>
     </nav>
 
     <main>
-        <h1>Home</h1>
+        <h1>Kabwe Chamber of Commerce</h1>
         
-        <section class="about">
-            <h2>About Me</h2>
-            <p>Massa Facilisis Per Purus Si Imperdiet Curae Amet. Et Fames Lorem Mi Phasellus Congue Nascetur Enim Consectetur Sociosqu Natoque Risus. Odio Vehicula Libero Nisl Viverra Augue Commodo Pretium Vivamus At Duis Magna. Quam Fringilla Convallis Ridiculus Malesuada Accumsan Potenti Magnis Volutpat Nulla Ipsum.</p>
-        </section>
+        <section class="hero-banner">
+    <div class="hero-overlay">
+        <h2>Empowering Local Growth</h2>
+        <p>Connecting businesses, generating economic momentum, and expanding development opportunities across the community. Partner with us today.</p>
+        <a href="join.html" class="cta-button">Join the Chamber</a>
+    </div>
+</section>
 
-        <section class="photo-section">
-            <h2>Student Photo</h2>
-            <img src="images/profile.jpg" alt="Munshimbwe Kafwanka Profile Picture" class="profile-image" width="200" height="200">
-        </section>
+                <section class="weather-card">
+    <div class="weather-header">
+        <p>The current temperature in Kabwe City, Zambia is <strong class="temp">--&deg;C</strong></p>
+    </div>
+    <div class="weather-info">
+        <img class="weather-icon" src="" alt="">
+        <span class="condition">Loading atmospheric data...</span>
+    </div>
+</section>
 
-        <section class="courses">
-            <h2>Web Certificate Courses</h2>
-            <div class="view-toggles">
-                <button class="filter-btn active-filter" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="cse">CSE Course</button>
-                <button class="filter-btn" data-filter="wdd">WDD Course</button>
-            </div>
-            <div id="course-container" class="course-list"></div>
-            <p class="credits">The total credits for courses listed above is <span id="total-credits">0</span></p>
+        <section class="spotlights-section">
+            <h2>Featured Business Spotlights</h2>
+            <div id="spotlight-container" class="course-list"></div>
         </section>
     </main>
 
     <footer>
         <div class="footer-contact">
-            <strong>Munshimbwe Kafwanka Portal</strong>
-            <p>Zambia Hub</p>
+            <strong>Kabwe Chamber of Commerce</strong>
+            <p>10 Independence Avenue</p>
+            <p>Kabwe, Zambia</p>
+            <p>info@kabwecc.org</p>
+            <p>(260) 215-5550</p>
         </div>
         <div class="footer-center">
             <div class="socials">
                 <a href="https://github.com/munshimbwe" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg viewBox="0 0 24 24" class="social-icon">
-                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
-            </a>
-
+                    <svg viewBox="0 0 24 24" class="social-icon">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
                 <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
                     <svg viewBox="0 0 24 24" class="social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <svg viewBox="0 0 24 24" class="social-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
-
             </div>
         </div>
         <div class="footer-meta">
-            <p>WDD231 Class Project</p>
+            <p>WDD231 | BYUI</p>
             <p>Munshimbwe Kafwanka</p>
             <p class="copyright-line">
-                <img src="https://byui.edu" alt="BYU-Idaho Icon" class="footer-favicon" width="16" height="16">
-                &copy; <span id="currentyear"></span> Munshimbwe Kafwanka Portal
+                <img src="images/previewcard.webp" alt="BYU-Idaho Icon" class="footer-favicon" width="16" height="16">
+                &copy; <span id="currentyear"></span> Kabwe Chamber of Commerce
             </p>
             <p id="lastModified"></p>
         </div>

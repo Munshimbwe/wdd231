@@ -400,45 +400,24 @@ footer {
 }
 
 dialog {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-dark);
   border-radius: 8px;
   padding: 20px;
   max-width: 500px;
   width: 90%;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: scale(0.9) translateY(20px);
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              overlay 0.4s ease allow-discrete, 
-              display 0.4s ease allow-discrete;
-}
-
-dialog[open] {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 dialog::backdrop {
   background-color: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
-}
-
-@starting-style {
-  dialog[open] {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
-  dialog[open]::backdrop {
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(0px);
-  }
 }
 
 .modal-content {

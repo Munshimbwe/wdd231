@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<body>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join - Kabwe Chamber of Commerce</title>
-    <meta name="description" content="Become a member of the Kabwe Chamber of Commerce. Select your tier and submit your application.">
+    <meta name="description" content="Join the Kabwe Chamber of Commerce to grow your business network. Select your membership tier and submit your application today.">
     <meta name="author" content="Munshimbwe Kafwanka">
-    <meta property="og:title" content="Join - Kabwe Chamber of Commerce">
+    <meta property="og:title" content="Join the Kabwe Chamber of Commerce Business Network">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/join.html">
     <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.webp">
-    <meta property="og:description" content="Become a member of the Kabwe Chamber of Commerce. Select your tier and submit your application.">
+    <meta property="og:description" content="Join the Kabwe Chamber of Commerce to grow your business network. Select your membership tier and submit your application today.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css">
-    <script type="module" src="scripts/main.mjs" defer></script>
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <script type="module" src="scripts/main.mjs"></script>
 </head>
-<body>
+
 
     <header>
         <img src="images/favicon.ico" alt="Chamber Logo" class="logo" width="40" height="40">
@@ -42,8 +42,7 @@
 
     <main>
         <h1>Chamber Membership Application</h1>
-        
-        <div class="form-layout" style="display: flex; flex-direction: column; gap: 30px;">
+                <div class="form-layout">
             <section class="form-section">
                 <h2>Application Form</h2>
                 <form action="thankyou.html" method="get">
@@ -97,74 +96,83 @@
                 </form>
             </section>
 
-            <section class="membership-cards" style="padding: 15px; display: flex; flex-direction: column; gap: 15px;">
+            <section class="membership-cards">
                 <h2>Membership Benefits</h2>
                 
-                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                <div class="benefit-card">
                     <h3>Non-Profit Tier</h3>
                     <button type="button" class="filter-btn open-modal" data-modal="np-modal">Learn More</button>
                 </div>
 
-                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                <div class="benefit-card">
                     <h3>Bronze Tier</h3>
                     <button type="button" class="filter-btn open-modal" data-modal="bronze-modal">Learn More</button>
                 </div>
 
-                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                <div class="benefit-card">
                     <h3>Silver Tier</h3>
                     <button type="button" class="filter-btn open-modal" data-modal="silver-modal">Learn More</button>
                 </div>
 
-                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                <div class="benefit-card">
                     <h3>Gold Tier</h3>
                     <button type="button" class="filter-btn open-modal" data-modal="gold-modal">Learn More</button>
                 </div>
             </section>
         </div>
 
-        <dialog id="np-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
-            <h2>Non-Profit Benefits</h2>
-            <p>Designed for charitable networks and schools looking to build community awareness.</p>
-            <ul>
-                <li>Standard Directory Listing</li>
-                <li>Access to Public Events</li>
-            </ul>
-            <button type="button" class="filter-btn close-modal">Close</button>
+        <dialog id="np-modal" class="modal-box">
+            <div class="modal-content">
+                <h2>Non-Profit Benefits</h2>
+                <p>Designed for charitable networks and schools looking to build community awareness.</p>
+                <ul>
+                    <li>Standard Directory Listing</li>
+                    <li>Access to Public Events</li>
+                </ul>
+                <button type="button" class="filter-btn close-modal">Close</button>
+            </div>
         </dialog>
 
-        <dialog id="bronze-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
-            <h2>Bronze Benefits</h2>
-            <p>Perfect starting entry point for smaller startups seeking network footholds.</p>
-            <ul>
-                <li>Standard Directory Listing</li>
-                <li>Basic Event Access Passes</li>
-                <li>Monthly Corporate Newsletter</li>
-            </ul>
-            <button type="button" class="filter-btn close-modal">Close</button>
+        <dialog id="bronze-modal" class="modal-box">
+            <div class="modal-content">
+                <h2>Bronze Benefits</h2>
+                <p>Perfect starting entry point for smaller startups seeking network footholds.</p>
+                <ul>
+                    <li>Standard Directory Listing</li>
+                    <li>Basic Event Access Passes</li>
+                    <li>Monthly Corporate Newsletter</li>
+                </ul>
+                <button type="button" class="filter-btn close-modal">Close</button>
+            </div>
         </dialog>
 
-        <dialog id="silver-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
-            <h2>Silver Benefits</h2>
-            <p>Increased commercial reach including training access and advertising.</p>
-            <ul>
-                <li>Highlighted Directory Grid Profile</li>
-                <li>Quarterly Social Media Campaigns</li>
-                <li>10% Training Registration Discounts</li>
-            </ul>
-            <button type="button" class="filter-btn close-modal">Close</button>
+        <dialog id="silver-modal" class="modal-box">
+            <div class="modal-content">
+                <h2>Silver Benefits</h2>
+                <p>Increased commercial reach including training access and advertising.</p>
+                <ul>
+                    <li>Highlighted Directory Grid Profile</li>
+                    <li>Quarterly Social Media Campaigns</li>
+                    <li>10% Training Registration Discounts</li>
+                </ul>
+                <button type="button" class="filter-btn close-modal">Close</button>
+            </div>
         </dialog>
 
-        <dialog id="gold-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
-            <h2>Gold Benefits</h2>
-            <p>Premium visibility package maximizing priority marketing placement channels.</p>
-            <ul>
-                <li>Randomized Homepage Spotlight Banner Rotation</li>
-                <li>Unlimited VIP Class & Luncheon Access</li>
-                <li>Priority Event Sponsorship Placement Options</li>
-            </ul>
-            <button type="button" class="filter-btn close-modal">Close</button>
+        <dialog id="gold-modal" class="modal-box">
+            <div class="modal-content">
+                <h2>Gold Benefits</h2>
+                <p>Premium visibility package maximizing priority marketing placement channels.</p>
+                <ul>
+                    <li>Randomized Homepage Spotlight Banner Rotation</li>
+                    <li>Unlimited VIP Class & Luncheon Access</li>
+                    <li>Priority Event Sponsorship Placement Options</li>
+                </ul>
+                <button type="button" class="filter-btn close-modal">Close</button>
+            </div>
         </dialog>
-    </main>
+
+            </main>
 
     <footer>
         <div class="footer-contact">

@@ -1,12 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
+ocument.addEventListener('DOMContentLoaded', () => {
     const timestampField = document.querySelector('#form-timestamp');
     if (timestampField) {
-        timestampField.value = Date.now();
+        timestampField.value = new Date().toISOString();
     }
 
-    const yearEl = document.querySelector('#currentyear');
-    const modifiedEl = document.querySelector('#lastModified');
-    
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-    if (modifiedEl) modifiedEl.textContent = `Last Modification: ${document.lastModified}`;
+    const openButtons = document.querySelectorAll('.open-modal');
+    const closeButtons = document.querySelectorAll('.close-modal');
+
+    openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            const dialog = document.getElementById(modalId);
+            if (dialog) {
+                dialog.showModal();
+            }
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const dialog = button.closest('dialog');
+            if (dialog) {
+                dialog.close();
+            }
+        });
+    });
 });

@@ -1,26 +1,70 @@
-export async function weatherApiFetch(url, tempEl, condEl, iconEl) {
+export async function weatherApiFetch(url, tempEl, condEl, iconEl, forecastEl) {
     try {
         const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            displayWeatherResults(data, tempEl, condEl, iconEl);
-        } else {
-            throw new Error(`Weather API Error: ${response.statusText}`);
+        if (!response.ok) throw new Error();
+        const data = await response.json();
+        
+        displayCurrentWeather(data, tempEl, condEl, iconEl);
+        if (forecastEl) {
+            displayForecast(data, forecastEl);
         }
     } catch (error) {
-        console.error(error);
-        tempEl.textContent = "N/A";
-        condEl.textContent = "Offline";
+        if (tempEl) tempEl.textContent = 'N/A';
+        if (condEl) condEl.textContent = 'Unable to load weather';
+        if (forecastEl) forecastEl.innerHTML = '<p>Forecast unavailable</p>';
     }
 }
 
-function displayWeatherResults(data, tempEl, condEl, iconEl) {
-    tempEl.innerHTML = `${Math.round(data.main.temp)}&deg;C`;
+function displayCurrentWeather(data, tempEl, condEl, iconEl) {
+    const current = data.list[0];
+    tempEl.innerHTML = `${Math.round(current.main.temp)}&deg;C`;
     
-    const desc = data.weather[0].description;
-    condEl.textContent = desc.charAt(0).toUpperCase() + desc.slice(1);
+    const description = current.weather[0].description;
+    condEl.textContent = description.charAt(0).toUpperCase() + description.slice(1);
     
-    iconEl.setAttribute('src', `https://openweathermap.org/img/w/${data.weather[0].icon}.png`);
-    iconEl.setAttribute('alt', desc);
-    iconEl.style.display = "block";
+    const iconCode = current.weather[0].icon;
+    iconEl.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
+    iconEl.setAttribute('alt', description);
+}
+
+function displayForecast(data, forecastEl) {
+    forecastEl.innerHTML = '';
+    
+    const dailyData = {};
+    
+    data.list.forEach(item => {
+        const date = item.dt_txt.split(' ')[0];
+        if (!dailyData[date]) {
+            dailyData[date] = [];
+        }
+        dailyData[date].push(item);
+    });
+
+    const dates = Object.keys(dailyData).slice(1, 4);
+
+    dates.forEach(date => {
+        const dayEntries = dailyData[date];
+        let dayTempSum = 0;
+        
+        dayEntries.forEach(entry => {
+            dayTempSum += entry.main.temp;
+        });
+
+        const avgTemp = Math.round(dayTempSum / dayEntries.length);
+        const dayIcon = dayEntries[Math.floor(dayEntries.length / 2)].weather[0].icon;
+        const dayDesc = dayEntries[Math.floor(dayEntries.length / 2)].weather[0].description;
+
+        const dateObj = new Date(date + 'T00:00:00');
+        const dayName = dateObj.toLocaleDateString('en-US', { weekday: 'short' });
+
+        const forecastItem = document.createElement('div');
+        forecastItem.classList.add('forecast-day');
+        forecastItem.innerHTML = `
+            <p class="forecast-date"><strong>${dayName}</strong></p>
+            <img src="https://openweathermap.org/img/wn/${dayIcon}.png" alt="${dayDesc}" width="40" height="40">
+            <p class="forecast-temp">${avgTemp}&deg;C</p>
+        `;
+
+        forecastEl.appendChild(forecastItem);
+    });
 }

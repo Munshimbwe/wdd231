@@ -17,15 +17,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css">
-    <script type="module" src="scripts/chamber.mjs"></script>
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <script type="module" src="scripts/main.mjs"></script>
-    <script type="module" src="scripts/weather.mjs"></script>
+    <script type="module" src="scripts/weather.mjs" defer></script>
 </head>
 <body>
 
     <header>
-        <img src="images/favicon.ico" alt="Chamber Logo" class="logo" width="40" height="40">
+        <img src="images/favicon.ico" alt="Kabwe Chamber Of Commerce Logo" class="logo" width="40" height="40">
         <span>Kabwe Chamber of Commerce</span>
         <div class="header-controls">
             <button id="dark-toggle" aria-label="Toggle Dark Mode">🌓</button>
@@ -46,27 +45,26 @@
         <h1>Kabwe Chamber of Commerce</h1>
         
         <section class="hero-banner">
-    <div class="hero-overlay">
-        <h2>Empowering Local Growth</h2>
-        <p>Connecting businesses, generating economic momentum, and expanding development opportunities across the community. Partner with us today.</p>
-        <a href="join.html" class="cta-button">Join the Chamber</a>
-    </div>
-</section>
-        <h2>Upcoming Events</h2>
+            <div class="hero-overlay">
+                <h2>Empowering Local Growth</h2>
+                <p>Connecting businesses, generating economic momentum, and expanding development opportunities across the community. Partner with us today.</p>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
 
+        <h2>Upcoming Events</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat porro aliquid perspiciatis natus unde, consequuntur magnam eaque! Excepturi at labore cupiditate fugit sit illo officiis reiciendis placeat. Incidunt, earum?</p>
 
-
-
-                <section class="weather-card">
-    <div class="weather-header">
-        <p>The current temperature in Kabwe City, Zambia is <strong class="temp">--&deg;C</strong></p>
-    </div>
-    <div class="weather-info">
-        <img class="weather-icon" src="images/weather-icon.webp" alt="Weather Icon">
-        <span class="condition">Loading atmospheric data...</span>
-    </div>
-</section>
+        <section class="weather-card">
+            <div class="weather-header">
+                <p>The current temperature in Kabwe City, Zambia is <strong class="temp">--&deg;C</strong></p>
+            </div>
+            <div class="weather-info">
+                <span class="condition">Loading atmospheric data...</span>
+                <img class="weather-icon" src="" alt="Current Weather Visual State Indicator" width="64" height="64">
+                <div class="forecast"></div>
+            </div>
+        </section>
 
         <section class="spotlights-section">
             <h2>Featured Business Spotlights</h2>
@@ -101,7 +99,7 @@
             <p>WDD231 | BYUI</p>
             <p>Munshimbwe Kafwanka</p>
             <p class="copyright-line">
-                <img src="images/previewcard.webp" alt="BYU-Idaho Icon" class="footer-favicon" width="16" height="16">
+                <img src="https://byui.edu" alt="BYU-Idaho Icon" class="footer-favicon" width="16" height="16">
                 &copy; <span id="currentyear"></span> Kabwe Chamber of Commerce
             </p>
             <p id="lastModified"></p>

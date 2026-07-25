@@ -140,3 +140,74 @@ export async function getMemberDataList(cards) {
         console.error(error);
     }
 }
+
+export function initNavigation() {
+    const menuButton = document.querySelector('#menu-toggle');
+    const navMenu = document.querySelector('#nav-menu');
+
+    if (menuButton && navMenu) {
+        menuButton.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            menuButton.classList.toggle('open');
+        });
+    }
+}
+
+export function initModals() {
+    const openButtons = document.querySelectorAll('.open-modal');
+    const closeButtons = document.querySelectorAll('.close-modal');
+
+    openButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.showModal();
+            }
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('dialog');
+            if (modal) {
+                modal.close();
+            }
+        });
+    });
+
+    const dialogs = document.querySelectorAll('dialog');
+    dialogs.forEach(dialog => {
+        dialog.addEventListener('click', (event) => {
+            const rect = dialog.getBoundingClientRect();
+            const isInDialog = (
+                rect.top <= event.clientY &&
+                event.clientY <= rect.top + rect.height &&
+                rect.left <= event.clientX &&
+                event.clientX <= rect.left + rect.width
+            );
+            if (!isInDialog) {
+                dialog.close();
+            }
+        });
+    });
+}
+
+export function setFooterDates() {
+    const yearSpan = document.querySelector('#currentyear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+
+    const lastModifiedPara = document.querySelector('#lastModified');
+    if (lastModifiedPara) {
+        lastModifiedPara.textContent = `Last Modification: ${document.lastModified}`;
+    }
+}
+
+export function setFormTimestamp() {
+    const timestampInput = document.querySelector('#timestamp');
+    if (timestampInput) {
+        timestampInput.value = new Date().toISOString();
+    }
+}

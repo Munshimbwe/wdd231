@@ -1,9 +1,16 @@
-import { getSpotlightCards } from "./chamber.mjs";
-import { weatherApiFetch } from "./weather.mjs";
+import { 
+    getSpotlightCards, 
+    initNavigation, 
+    initModals, 
+    setFooterDates, 
+    setFormTimestamp,
+    getMemberDataGrid 
+} from './chamber.mjs';
+import { weatherApiFetch } from './weather.mjs';
 
-document.addEventListener("DOMContentLoaded", () => {
-    initializeFooter();
-    initializeNavigation();
+document.addEventListener('DOMContentLoaded', () => {
+    initNavigation();
+    setFooterDates();
     initializeDarkMode();
 
     const spotlightContainer = document.querySelector('#spotlight-container');
@@ -11,60 +18,45 @@ document.addEventListener("DOMContentLoaded", () => {
         getSpotlightCards(spotlightContainer);
     }
 
-    const tempDisplay = document.querySelector('.weather-card .temp');
-    const condDisplay = document.querySelector('.weather-card .condition');
-    const iconDisplay = document.querySelector('.weather-card .weather-icon');
-    const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=-14.454726155497054&lon=28.472300942498496&units=metric&appid=cc520e6f7c509875bf7a6906c2185f46';
-    if (tempDisplay && condDisplay && iconDisplay) {
-        weatherApiFetch(weatherUrl, tempDisplay, condDisplay, iconDisplay);
+    const memberGridContainer = document.querySelector('#member-container');
+    if (memberGridContainer && typeof getMemberDataGrid === 'function') {
+        getMemberDataGrid(memberGridContainer);
+    }
+
+    const openModalBtn = document.querySelector('.open-modal');
+    if (openModalBtn) {
+        initModals();
+    }
+
+    const timestampInput = document.querySelector('#timestamp');
+    if (timestampInput) {
+        setFormTimestamp();
+    }
+
+    const tempDisplay = document.querySelector('.weather-card .temp') || document.querySelector('.weather-now .temp');
+    const condDisplay = document.querySelector('.weather-card .condition') || document.querySelector('.weather-now .condition');
+    const iconDisplay = document.querySelector('.weather-card .weather-icon') || document.querySelector('.weather-now .weather-icon');
+    const forecastDisplay = document.querySelector('.weather-card .forecast') || document.querySelector('.forecast-grid');
+
+    if (tempDisplay && condDisplay) {
+        const weatherUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat=-14.454726155497054&lon=28.472300942498496&units=metric&appid=cc520e6f7c509875bf7a6906c2185f46';
+        weatherApiFetch(weatherUrl, tempDisplay, condDisplay, iconDisplay, forecastDisplay);
     }
 });
-
-function initializeFooter() {
-    const lastModEl = document.getElementById("lastModified");
-    const currentYearEl = document.getElementById("currentyear");
-    
-    if (lastModEl) lastModEl.innerHTML = `Last Modification: ${document.lastModified}`;
-    if (currentYearEl) currentYearEl.innerHTML = new Date().getFullYear();
-}
-
-function initializeNavigation() {
-    const navButton = document.querySelector('#menu-toggle'); 
-    const navLinks = document.querySelector('#nav-menu');    
-
-    if (navButton && navLinks) {
-        navButton.addEventListener('click', () => {
-            navButton.classList.toggle('show');
-            navLinks.classList.toggle('show');
-        });
-    }
-}
 
 function initializeDarkMode() {
     const darkButton = document.querySelector('#dark-toggle');
     if (darkButton) {
         darkButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
         });
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
     }
 }
- 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

@@ -3,130 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Kabwe Chamber of Commerce - Join Us</title>
-    <meta name="description" content="Become a member of the Chamber Network. Submit your application and select your membership tier.">
+    <title>Join - Kabwe Chamber of Commerce</title>
+    <meta name="description" content="Become a member of the Kabwe Chamber of Commerce. Select your tier and submit your application.">
     <meta name="author" content="Munshimbwe Kafwanka">
+    <meta property="og:title" content="Join - Kabwe Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/join.html">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.webp">
+    <meta property="og:description" content="Become a member of the Kabwe Chamber of Commerce. Select your tier and submit your application.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/join.js" defer></script>
+    <script type="module" src="scripts/main.mjs" defer></script>
 </head>
 <body>
 
     <header>
-        <img src="images/home.svg" alt="Chamber of Commerce Logo" class="logo">
+        <img src="images/favicon.ico" alt="Chamber Logo" class="logo" width="40" height="40">
         <span>Kabwe Chamber of Commerce</span>
-        <button id="menu-toggle">☰</button>
+        <div class="header-controls">
+            <button id="dark-toggle" aria-label="Toggle Dark Mode">🌓</button>
+            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
+        </div>
     </header>
 
-    <nav id="nav-menu">
+    <nav id="nav-menu" aria-label="Main Navigation" class="open">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="discover.html">Discover</a></li>
             <li><a href="directory.html">Directory</a></li>
             <li><a href="join.html" class="active">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
         </ul>
     </nav>
 
     <main>
         <h1>Chamber Membership Application</h1>
         
-        <section class="form-section">
-            <h2>Application Form</h2>
-            <form action="thankyou.html" method="get">
-                <input type="hidden" id="form-timestamp" name="timestamp">
+        <div class="form-layout" style="display: flex; flex-direction: column; gap: 30px;">
+            <section class="form-section">
+                <h2>Application Form</h2>
+                <form action="thankyou.html" method="get">
+                    <input type="hidden" id="form-timestamp" name="timestamp">
 
-                <label>First Name *
-                    <input type="text" name="firstname" required autocomplete="given-name">
-                </label>
-
-                <label>Last Name *
-                    <input type="text" name="lastname" required autocomplete="family-name">
-                </label>
-
-                <label>Organizational Title
-                    <input type="text" name="title" autocomplete="organization-title">
-                </label>
-
-                <label>Email Address *
-                    <input type="email" name="email" placeholder="name@example.com" required autocomplete="email">
-                </label>
-
-                <label>Mobile Phone *
-                    <input type="tel" name="phone" placeholder="123-456-7890" required autocomplete="tel">
-                </label>
-
-                <label>Organization/Business Name *
-                    <input type="text" name="organization" required autocomplete="organization">
-                </label>
-
-                <fieldset>
-                    <legend>Membership Tier *</legend>
-                    <label class="radio-label">
-                        <input type="radio" name="tier" value="non-profit" required> Non-Profit Tier
+                    <label>First Name *
+                        <input type="text" name="firstname" required autocomplete="given-name">
                     </label>
-                    <label class="radio-label">
-                        <input type="radio" name="tier" value="silver"> Silver Tier
+
+                    <label>Last Name *
+                        <input type="text" name="lastname" required autocomplete="family-name">
                     </label>
-                    <label class="radio-label">
-                        <input type="radio" name="tier" value="gold"> Gold Tier
+
+                    <label>Organizational Title
+                        <input type="text" name="title" autocomplete="organization-title">
                     </label>
-                </fieldset>
 
-                <label>Business Description
-                    <textarea name="description" rows="4" placeholder="Tell us about your business or organization..."></textarea>
-                </label>
+                    <label>Email Address *
+                        <input type="email" name="email" placeholder="name@example.com" required autocomplete="email">
+                    </label>
 
-                <button type="submit" class="cta-button">Submit Application</button>
-            </form>
-        </section>
+                    <label>Mobile Phone *
+                        <input type="tel" name="phone" placeholder="123-456-7890" required autocomplete="tel">
+                    </label>
 
-        <section class="benefits-section">
-            <h2>Membership Levels & Perks</h2>
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Benefits & Perks</th>
-                            <th>Non-Profit</th>
-                            <th>Silver</th>
-                            <th>Gold</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Directory Listing</td>
-                            <td>Standard</td>
-                            <td>Featured</td>
-                            <td>Premium Spotlight</td>
-                        </tr>
-                        <tr>
-                            <td>Trainings & Luncheons</td>
-                            <td>❌</td>
-                            <td>Included</td>
-                            <td>VIP / Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td>Social Media Campaigns</td>
-                            <td>❌</td>
-                            <td>Quarterly</td>
-                            <td>Monthly Focus</td>
-                        </tr>
-                        <tr>
-                            <td>Sponsorship Event Advertising</td>
-                            <td>❌</td>
-                            <td>10% Discount</td>
-                            <td>Fully Included</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+                    <label>Organization/Business Name *
+                        <input type="text" name="organization" required autocomplete="organization">
+                    </label>
+
+                    <fieldset>
+                        <legend>Membership Tier *</legend>
+                        <label class="radio-label">
+                            <input type="radio" name="tier" value="non-profit" required> Non-Profit Tier
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tier" value="bronze"> Bronze Tier
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tier" value="silver"> Silver Tier
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="tier" value="gold"> Gold Tier
+                        </label>
+                    </fieldset>
+
+                    <label>Business Description
+                        <textarea name="description" rows="4" placeholder="Tell us about your business or organization..."></textarea>
+                    </label>
+
+                    <button type="submit" class="cta-button">Submit Application</button>
+                </form>
+            </section>
+
+            <section class="membership-cards" style="padding: 15px; display: flex; flex-direction: column; gap: 15px;">
+                <h2>Membership Benefits</h2>
+                
+                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                    <h3>Non-Profit Tier</h3>
+                    <button type="button" class="filter-btn open-modal" data-modal="np-modal">Learn More</button>
+                </div>
+
+                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                    <h3>Bronze Tier</h3>
+                    <button type="button" class="filter-btn open-modal" data-modal="bronze-modal">Learn More</button>
+                </div>
+
+                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                    <h3>Silver Tier</h3>
+                    <button type="button" class="filter-btn open-modal" data-modal="silver-modal">Learn More</button>
+                </div>
+
+                <div class="directory-card" style="padding: 15px; background: white; text-align: center; border: 1px solid var(--border-dark); border-radius: 8px;">
+                    <h3>Gold Tier</h3>
+                    <button type="button" class="filter-btn open-modal" data-modal="gold-modal">Learn More</button>
+                </div>
+            </section>
+        </div>
+
+        <dialog id="np-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
+            <h2>Non-Profit Benefits</h2>
+            <p>Designed for charitable networks and schools looking to build community awareness.</p>
+            <ul>
+                <li>Standard Directory Listing</li>
+                <li>Access to Public Events</li>
+            </ul>
+            <button type="button" class="filter-btn close-modal">Close</button>
+        </dialog>
+
+        <dialog id="bronze-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
+            <h2>Bronze Benefits</h2>
+            <p>Perfect starting entry point for smaller startups seeking network footholds.</p>
+            <ul>
+                <li>Standard Directory Listing</li>
+                <li>Basic Event Access Passes</li>
+                <li>Monthly Corporate Newsletter</li>
+            </ul>
+            <button type="button" class="filter-btn close-modal">Close</button>
+        </dialog>
+
+        <dialog id="silver-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
+            <h2>Silver Benefits</h2>
+            <p>Increased commercial reach including training access and advertising.</p>
+            <ul>
+                <li>Highlighted Directory Grid Profile</li>
+                <li>Quarterly Social Media Campaigns</li>
+                <li>10% Training Registration Discounts</li>
+            </ul>
+            <button type="button" class="filter-btn close-modal">Close</button>
+        </dialog>
+
+        <dialog id="gold-modal" style="padding: 24px; border: 1px solid var(--border-dark); border-radius: 8px; max-width: 400px; width: 90%;">
+            <h2>Gold Benefits</h2>
+            <p>Premium visibility package maximizing priority marketing placement channels.</p>
+            <ul>
+                <li>Randomized Homepage Spotlight Banner Rotation</li>
+                <li>Unlimited VIP Class & Luncheon Access</li>
+                <li>Priority Event Sponsorship Placement Options</li>
+            </ul>
+            <button type="button" class="filter-btn close-modal">Close</button>
+        </dialog>
     </main>
+
+    <footer>
         <div class="footer-contact">
             <strong>Kabwe Chamber of Commerce</strong>
             <p>10 Independence Avenue</p>
@@ -159,6 +199,5 @@
             <p id="lastModified"></p>
         </div>
     </footer>
-
 </body>
 </html>

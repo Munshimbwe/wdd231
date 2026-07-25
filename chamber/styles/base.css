@@ -440,6 +440,35 @@ dialog[open]::backdrop {
   background-color: #555;
 }
 
+.form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.membership-cards {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.benefit-card {
+  padding: 15px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+}
+
+.modal-box {
+  padding: 24px;
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+}
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;

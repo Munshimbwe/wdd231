@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce - Discover Our Region</title>
-    <meta name="description" content="Explore local history, current demographics, regional events, and regional highlights across our chamber district.">
-    <meta name="author" content="Student Name">
+    <title>Kabwe Chamber of Commerce - Home</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
+    <meta name="author" content="Munshimbwe Kafwanka">
+    <meta property="og:title" content="Kabwe Chamber of Commerce - Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.webp">
+    <meta property="og:description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css">
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/discover.js" defer></script>
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
+    <link rel="stylesheet" href="styles/small.css">
+    <script type="module" src="scripts/discover.js"></script>
+    
 </head>
 <body>
 
     <header>
-        <img src="images/home.svg" alt="Chamber of Commerce Logo" class="logo">
+        <img src="images/favicon.ico" alt="Chamber of Commerce Logo" class="logo">
         <span>Kabwe Chamber of Commerce</span>
         <button id="menu-toggle">☰</button>
     </header>
@@ -31,31 +38,60 @@
             <li><a href="join.html">Join</a></li>
         </ul>
     </nav>
-
-    <main>
+        <main>
+                <main>
         <h1>Discover Our Community</h1>
+        
+        <div id="visitTrackingMessage" class="info-card-text" style="background-color: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; font-weight: 600; text-align: center; margin-bottom: 1.5rem;">
+            Initializing tracking metrics...
+        </div>
+        
+        <div class="discover-content">
+            
+        </div>
+    </main>
+
         
         <div class="discover-content">
             <section class="info-card">
-                <h2>Local History</h2>
-                <p>Founded in the late 19th century, our region quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development. Over the generations, it transformed from a quiet technical outpost into a highly dynamic urban center.</p>
+                <img src="images/nature.webp" alt="Historic Kabwe architecture thumbnail" class="info-card-img" loading="lazy">
+                <div class="info-card-text">
+                    <h2>Local History</h2>
+                    <p>Founded in the late 19th century, our region quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development.</p>
+                    <button class="btn-learn-more" data-modal-target="history">Learn More</button>
+                </div>
             </section>
 
             <section class="info-card">
-                <h2>Current Demographics</h2>
-                <p>Home to over 150,000 residents, our area boast a diverse professional marketplace. With an annual growth rating exceeding national benchmarks, our modern employment index is anchored across engineering, retail fields, and dynamic web technology platforms.</p>
+                <img src="images/cuisine.webp" alt="Marketplace workforce thumbnail" class="info-card-img" loading="lazy">
+                <div class="info-card-text">
+                    <h2>Current Demographics</h2>
+                    <p>Home to over 150,000 residents, our area boasts a diverse professional marketplace. With an annual growth rating exceeding national benchmarks.</p>
+                    <button class="btn-learn-more" data-modal-target="demographics">Learn More</button>
+                </div>
             </section>
 
             <section class="info-card">
-                <h2>Upcoming Regional Events</h2>
-                <p>Join us next month for our Annual Economic Integration Gala, featuring keynote distributions from leading corporate developers. Don't forget to track our quarterly weekend maker exhibitions hosted directly along the riverfront marketplace.</p>
+                <img src="images/boat-cruise.webp" alt="Chamber events thumbnail" class="info-card-img" loading="lazy">
+                <div class="info-card-text">
+                    <h2>Upcoming Regional Events</h2>
+                    <p>Join us next month for our Annual Economic Integration Gala, featuring keynote distributions from leading corporate developers.</p>
+                    <button class="btn-learn-more" data-modal-target="events">Learn More</button>
+                </div>
             </section>
         </div>
 
-        <section class="montage-section">
-            <h2>Area Photo Gallery</h2>
-            <div class="gallery-montage">
-                <div class="montage-item">
+        <!-- Montage Photo Gallery Section remains below -->
+    </main>
+
+    <!-- Accessible Modal Container Element -->
+    <div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-window">
+            <h3 id="modalTitle">Modal Details Header</h3>
+            <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
+            <button id="closeModalBtn" class="btn-submit" style="background-color: #7f8c8d;">Dismiss</button>
+        </div>
+    </div>
                     <img src="images/mulungushi-dam.webp" alt="Breathetaking Mulungushi Dam " loading="lazy" width="400" height="300">
                     <div class="caption">Mulungushi Dam</div>
                 </div>

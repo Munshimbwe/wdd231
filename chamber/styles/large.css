@@ -62,3 +62,9 @@
     margin-left: 1.5rem;
   }
 }
+@media (min-width: 768px) {
+    .discover-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}

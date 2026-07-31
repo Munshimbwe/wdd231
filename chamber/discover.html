@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kabwe Chamber of Commerce - Home</title>
+    <title>Kabwe Chamber of Commerce - Discover</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta name="description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
     <meta name="author" content="Munshimbwe Kafwanka">
-    <meta property="og:title" content="Kabwe Chamber of Commerce - Home">
+    
+    <!-- Open Graph Protocol Metadata -->
+    <meta property="og:title" content="Kabwe Chamber of Commerce - Discover">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://github.io">
     <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.webp">
-    <meta property="og:description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
+    <meta property="og:description" content="Explore regional history, community demographics, and view photos of the Kabwe region.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <script type="module" src="scripts/discover.js"></script>
-    
+    <script type="module" src="scripts/utils.js"></script>
 </head>
 <body>
 
@@ -38,19 +42,14 @@
             <li><a href="join.html">Join</a></li>
         </ul>
     </nav>
-        <main>
-                <main>
+
+    <main>
         <h1>Discover Our Community</h1>
         
+        <!-- Live Visitor Telemetry Display Bar -->
         <div id="visitTrackingMessage" class="info-card-text" style="background-color: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; font-weight: 600; text-align: center; margin-bottom: 1.5rem;">
             Initializing tracking metrics...
         </div>
-        
-        <div class="discover-content">
-            
-        </div>
-    </main>
-
         
         <div class="discover-content">
             <section class="info-card">
@@ -81,18 +80,11 @@
             </section>
         </div>
 
-        <!-- Montage Photo Gallery Section remains below -->
-    </main>
-
-    <!-- Accessible Modal Container Element -->
-    <div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-window">
-            <h3 id="modalTitle">Modal Details Header</h3>
-            <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
-            <button id="closeModalBtn" class="btn-submit" style="background-color: #7f8c8d;">Dismiss</button>
-        </div>
-    </div>
-                    <img src="images/mulungushi-dam.webp" alt="Breathetaking Mulungushi Dam " loading="lazy" width="400" height="300">
+        <section class="montage-section">
+            <h2>Area Photo Gallery</h2>
+            <div class="gallery-montage">
+                <div class="montage-item">
+                    <img src="images/mulungushi-dam.webp" alt="Breathtaking Mulungushi Dam" loading="lazy" width="400" height="300">
                     <div class="caption">Mulungushi Dam</div>
                 </div>
                 <div class="montage-item">
@@ -118,16 +110,17 @@
             </div>
         </section>
     </main>
-    
-<footer>
-        <div class="footer-contact">
-            <strong>Kabwe Chamber of Commerce</strong>
-            <p>10 Butungwa Avenue</p>
-            <p>Kabwe, Zambia 999</p>
-            <p>info@kabwec.org</p>
-            <p>(260) 555-2300</p>
+
+    <!-- Accessible Modal Container Element -->
+    <div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-window">
+            <h3 id="modalTitle">Modal Details Header</h3>
+            <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
+            <button id="closeModalBtn" class="btn-submit" style="background-color: #7f8c8d;">Dismiss</button>
         </div>
-        <footer>
+    </div>
+    
+    <footer>
         <div class="footer-contact">
             <strong>Kabwe Chamber of Commerce</strong>
             <p>10 Independence Avenue</p>
@@ -143,10 +136,14 @@
                     </svg>
                 </a>
                 <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
-                    <svg viewBox="0 0 24 24" class="social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    <svg viewBox="0 0 24 24" class="social-icon">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" class="social-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <svg viewBox="0 0 24 24" class="social-icon">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                 </a>
             </div>
         </div>

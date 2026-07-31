@@ -1,0 +1,122 @@
+[
+    {
+        "id": "mem-001",
+        "title": "Family Picnic at the Park",
+        "category": "outdoor",
+        "likes": 12,
+        "caption": "A wonderful sunny afternoon sharing snacks and playing games outdoors.",
+        "image": "../images/familypicnic.webp"
+    },
+    {
+        "id": "mem-002",
+        "title": "Baking Cookies with Grandma",
+        "category": "indoor",
+        "likes": 24,
+        "caption": "Learning secret recipes and enjoying homemade chocolate chip treats.",
+        "image": "../images/baking-with-granny.webp"
+    },
+    {
+        "id": "mem-003",
+        "title": "Weekend Bike Trail Ride",
+        "category": "outdoor",
+        "likes": 18,
+        "caption": "Exploring the new regional paths together as a team.",
+        "image": "../images/family-biking.webp"
+    },
+    {
+        "id": "mem-004",
+        "title": "Board Game Marathon Night",
+        "category": "indoor",
+        "likes": 15,
+        "caption": "Unplugged family fun with friendly strategies and rolling dice.",
+        "image": "../images/family-board-games.webp"
+    },
+    {
+        "id": "mem-005",
+        "title": "Backyard Vegetable Gardening",
+        "category": "outdoor",
+        "likes": 9,
+        "caption": "Planting fresh tomato seeds and organic herbs in the raised beds.",
+        "image": "../images/familypicnic.webp"
+    },
+    {
+        "id": "mem-006",
+        "title": "Storytime by the Fireplace",
+        "category": "indoor",
+        "likes": 31,
+        "caption": "Reading classic adventure novels together on a rainy afternoon.",
+        "image": "../images/baking-with-granny.webp"
+    },
+    {
+        "id": "mem-007",
+        "title": "Morning Soccer Match Practice",
+        "category": "outdoor",
+        "likes": 22,
+        "caption": "Running drills and practicing goal kicks on the community lawn.",
+        "image": "../images/family-biking.webp"
+    },
+    {
+        "id": "mem-008",
+        "title": "Homemade Pizza Making Session",
+        "category": "indoor",
+        "likes": 40,
+        "caption": "Rolling out dough and adding custom vegetable toppings together.",
+        "image": "../images/family-board-games.webp"
+    },
+    {
+        "id": "mem-009",
+        "title": "Kanyanta River Nature Walk",
+        "category": "outdoor",
+        "likes": 17,
+        "caption": "Observing local birds and gathering unique rocks near the bank.",
+        "image": "../images/familypicnic.webp"
+    },
+    {
+        "id": "mem-010",
+        "title": "Painting Arts & Crafts Hour",
+        "category": "indoor",
+        "likes": 14,
+        "caption": "Creating colorful watercolor portraits on textured canvas frames.",
+        "image": "../images/baking-with-granny.webp"
+    },
+    {
+        "id": "mem-011",
+        "title": "Afternoon Backyard Kite Flying",
+        "category": "outdoor",
+        "likes": 26,
+        "caption": "Catching high wind currents with our custom handmade nylon kite.",
+        "image": "../images/family-biking.webp"
+    },
+    {
+        "id": "mem-012",
+        "title" : "Building Living Room Castles",
+        "category": "indoor",
+        "likes": 19,
+        "caption": "Assembling complex blanket fort layouts using pillows and chairs.",
+        "image": "../images/family-board-games.webp"
+    },
+    {
+        "id": "mem-013",
+        "title": "Stargazing and Constellation Mapping",
+        "category": "outdoor",
+        "likes": 35,
+        "caption": "Identifying clear celestial patterns with the backyard telescope.",
+        "image": "../images/familypicnic.webp"
+    },
+    {
+        "id": "mem-014",
+        "title": "Sustained Sunday Music Session",
+        "category": "indoor",
+        "likes": 28,
+        "caption": "Learning acoustic guitar chords and rhythm patterns as a group.",
+        "image": "../images/baking-with-granny.webp"
+    },
+    {
+        "id": "mem-015",
+        "title": "Community Park Cleanup Drive",
+        "category": "outdoor",
+        "likes": 45,
+        "caption": "Gathering litter and sorting recyclables to keep walkways clean.",
+        "image": "../images/family-biking.webp"
+    }
+]

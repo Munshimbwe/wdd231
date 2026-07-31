@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KinSpace - Secure Family Network Hub</title>
+    <meta name="description" content="A private, ad-free social utility platform engineered strictly for families, children, and close domestic relational connection safety.">
+    <meta name="keywords" content="private family social media, secure child safe sharing platform, domestic networking software">
+    <meta name="author" content="Munshimbwe Kafwanka">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <meta property="og:title" content="KinSpace - Secure Family Network Hub">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.io">
+    <meta property="og:image" content="https://github.io">
+    <meta property="og:description" content="An isolated, algorithmic-free digital ecosystem built strictly to preserve childhood privacy while strengthening household connections.">
+    <meta property="og:site_name" content="KinSpace Platform">
+    <link rel="stylesheet" href="styles/kinspace.css">
+    <script src="scripts/main.js" type="module" defer></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">👨‍👩‍👧‍👦 KinSpace</a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle structural navigation drawer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="active">🏠 Home</a>
+                <a href="hub.html">🖼️ Memory Wall</a>
+                <a href="join.html">📝 Register</a>
+                <button id="themeToggle" class="btn-theme">🌙 Dark</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Social Media Reimagined For Families. 🚀</h1>
+            <p>A private, algorithmic-free ecosystem built strictly to preserve childhood privacy while strengthening your household connections.</p>
+            <button class="btn-cta">Initialize Family Unit 🎉</button>
+        </section>
+        <section class="tool-section">
+            <h2 id="h-platform-overview">Platform Security Architecture</h2>
+            <p>Unlike commercial mainstream digital channels designed around tracking algorithms and advertising networks, KinSpace operates inside closed parameters. Profiles are hidden from indexing search bots, meaning only explicitly invited relatives can access, view, or connect with your private family unit logs.</p>
+        </section>
+        <div class="grid-layout">
+            <article class="card">
+                <div class="placeholder-card-icon">🏡</div>
+                <div class="card-inner-content">
+                    <h3>Private Vaults</h3>
+                    <p>Archive multi-generational updates safely. No third-party data profiling or targeted marketing matrices can cross the threshold of your ecosystem boundary lines.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="placeholder-card-icon">🛡️</div>
+                <div class="card-inner-content">
+                    <h3>Active Guardrails</h3>
+                    <p>Parents manage precise configuration states, screen timeouts, bedtime curfews, and relationship validation parameters effortlessly from a single master dashboard layer.</p>
+                </div>
+            </article>
+            <article class="card">
+                <div class="placeholder-card-icon">🎨</div>
+                <div class="card-inner-content">
+                    <h3>Organic Explore</h3>
+                    <p>Children explore custom discovery boards packed with educational content, hobby tutorials, and creative problems, without toxic engagement manipulation patterns.</p>
+                </div>
+            </article>
+        </div>
+        <section class="tool-section">
+            <h2>Outdoor Play Safety Checker 🌦️</h2>
+            <p>Verify external safety conditions instantly using the automated index formula algorithm before authorizing children to play outside.</p>
+            <div class="grid-layout weather-layout-row">
+                <div>
+                    <div class="weather-status-block">
+                        <span id="weatherIcon" class="weather-status-icon">☀️</span>
+                        <span id="ambientTemp">21°C</span>
+                    </div>
+                    <p class="weather-status-subtext">Automated environmental parameter detection loop initialized.</p>
+                </div>
+                <div>
+                    <h4 class="chill-calculator-title">Wind Chill Multiplier Factor</h4>
+                    <div class="chill-calculator-inputs">
+                        <input type="number" id="tempInput" placeholder="Temp (°C)" value="4">
+                        <input type="number" id="windInput" placeholder="Wind (km/h)" value="15">
+                    </div>
+                    <button id="calcChillBtn" class="btn-submit chill-calc-submit">Compute Index</button>
+                    <p id="chillResult" class="chill-calc-result">Wind Chill Index: --</p>
+                </div>
+            </div>
+        </section>
+        <section class="tool-section">
+            <h2>Ask KinSpace AI Assistant 🤖</h2>
+            <p>Test our heavily moderated, child-safe assistant. This text processor immediately catches and strips out cyberbullying patterns or harmful keyword interactions.</p>
+            <div class="ai-interface-container">
+                <input type="text" id="aiQuery" placeholder="Ask a question (e.g., Why is the sky blue? or test a blocked word...)">
+                <button id="askAiBtn" class="btn-submit ai-interface-submit">Submit Inquiry</button>
+                <div id="aiResponse" class="ai-interface-response-box">Waiting for input logs... 💤</div>
+            </div>
+        </section>
+        <section class="tool-section metrics-summary-panel">
+            <h3>📊 Platform Engagement Metrics</h3>
+            <p class="metrics-summary-text">Total Interactive Likes Tracked Session-wide: <span id="totalEngagementDisplay" class="metrics-summary-value">0</span></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️</p>
+        <p>Project Platform Location Deployment Node: ⚒️Kabwe, Zambia⚒️</p>
+        <p class="footer-modification-text">Page Last Modified: <span id="lastModifiedDate"></span></p>
+        <p class="footer-citations-link">
+            <a href="references.html">View Resource Attributions Index</a> | 
+            <a href="https://youtu.be" target="_blank" rel="noopener">Watch JavaScript Functionality Video Demonstration</a>
+        </p>
+    </footer>
+</body>
+</html>

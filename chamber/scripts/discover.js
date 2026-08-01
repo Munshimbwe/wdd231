@@ -1,4 +1,37 @@
-import { processVisitTrackingMetrics } from './utils.js';
+const modalContentRegistry = {
+    history: {
+        title: "Kabwe Historical Heritage",
+        text: "Kabwe expanded into an active hub after rich zinc and lead mineral veins were surfaced in 1902. It traces its ancestry as a baseline engine for railway logistics and engineering trades across Central Africa."
+    },
+    demographics: {
+        title: "Demographics & Urban Census",
+        text: "Boasting over 150,000 residents, the corporate zone features an index of technical, trade-oriented, and small-scale web consulting platforms showing significant annual expansion indexes."
+    },
+    events: {
+        title: "Economic Integration Gala",
+        text: "Our signature economic summit builds local connection paths. Members collaborate on enterprise workflows, explore policy documents, and network with technology developers."
+    },
+    dam: {
+        title: "Mulungushi Dam",
+        text: "A must see gem located approx 60km from Kabwe town. The dam is great for fishermen and there's hidden falls and gorges."
+    },
+    mountain: {
+        title: "Prayer Mountain",
+        text: "Prayer Mountain comes from Christians in surrounding areas going there to pray. Due to its majestic scenery, climbing tracks, and historic geography outlook layers."
+    },
+    cruise: {
+        title: "River Cruise",
+        text: "Experience Kabwe's water networks with scheduled weekend commercial cruise outings, with beautiful natural sightseeing experiences."
+    },
+    riverfront: {
+        title: "Riverfront",
+        text: "A central municipal park node hosting river activities for all age groups."
+    },
+    nature: {
+        title: "Kabwe Safari Lodge",
+        text: "This environmental wildlife reserve provides high conservation protection parameters for local bird life and rare flora profiles."
+    }
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     initializeGlobalVisitTracker();
@@ -6,7 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initializeGlobalVisitTracker() {
-    processVisitTrackingMetrics("chamberPlatformLastVisitToken");
+    const trackingFeedbackBox = document.getElementById("visitTrackingMessage");
+    if (!trackingFeedbackBox) return;
+
+    const currentTimestamp = Date.now();
+    const rawLastVisitedValue = localStorage.getItem("chamberPlatformLastVisitToken");
+
+    if (!rawLastVisitedValue) {
+        trackingFeedbackBox.textContent = "Welcome! Let us know if you have any questions.";
+        localStorage.setItem("chamberPlatformLastVisitToken", currentTimestamp);
+        return;
+    }
+
+    const lastVisitedTimestamp = parseInt(rawLastVisitedValue, 10);
+    const timeDifferenceMs = currentTimestamp - lastVisitedTimestamp;
+    
+    const msInOneDay = 1000 * 60 * 60 * 24;
+    const computedWholeDays = Math.floor(timeDifferenceMs / msInOneDay);
+
+    if (timeDifferenceMs < msInOneDay) {
+        trackingFeedbackBox.textContent = "Back so soon! AWESOME!";
+    } else if (computedWholeDays === 1) {
+        trackingFeedbackBox.textContent = "You last visited 1 day ago.";
+    } else {
+        trackingFeedbackBox.textContent = `You last visited ${computedWholeDays} days ago.`;
+    }
+
+    localStorage.setItem("chamberPlatformLastVisitToken", currentTimestamp);
 }
 
 function initializeAccessibilityModal() {
@@ -45,96 +104,14 @@ function initializeAccessibilityModal() {
     };
 
     closeBtn.addEventListener("click", dismissModalWindow);
+    
     modalOverlay.addEventListener("click", (e) => {
         if (e.target === modalOverlay) dismissModalWindow();
     });
+
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && modalOverlay.classList.contains("modal-active")) {
             dismissModalWindow();
         }
     });
 }
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const yearEl = document.querySelector('#currentyear');
-    const modifiedEl = document.querySelector('#lastModified');
-    
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-    if (modifiedEl) modifiedEl.textContent = `Last Modification: ${document.lastModified}`;
-});
-
-const modalContentRegistry = {
-    history: {
-        title: "Kabwe Historical Timeline",
-        text: "Kabwe was formerly named Broken Hill when rich zinc and lead deposits were discovered in 1902. It stands as one of the oldest industrial mining centers in Zambia, shaping the mechanical engineering infrastructure of the nation."
-    },
-    demographics: {
-        title: "Community Growth Metrics",
-        text: "Current tracking logs confirm an active expansion across information technology and small business development sectors. The region pairs a young, technical student cohort with deep industrial field expertise."
-    },
-    events: {
-        title: "Chamber Networking Matrix",
-        text: "The upcoming Gala coordinates with national tech panels. Attendees gain access to private project showcases, B2B matchmaking interfaces, and policy roundtables organized by regional directors."
-    }
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-    initializeAccessibilityModal();
-});
-
-function initializeAccessibilityModal() {
-    const modalOverlay = document.getElementById("infoModalOverlay");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalBody = document.getElementById("modalBody");
-    const closeBtn = document.getElementById("closeModalBtn");
-    const triggerButtons = document.querySelectorAll(".btn-learn-more");
-    
-    let activeTriggerElement = null;
-
-    if (!modalOverlay || !closeBtn) return;
-
-    triggerButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const targetKey = e.currentTarget.getAttribute("data-modal-target");
-            const content = modalContentRegistry[targetKey];
-            
-            if (content) {
-                activeTriggerElement = e.currentTarget;
-                modalTitle.textContent = content.title;
-                modalBody.textContent = content.text;
-                
-                modalOverlay.classList.add("modal-active");
-                modalOverlay.setAttribute("aria-hidden", "false");
-                closeBtn.focus();
-            }
-        });
-    });
-
-    const dismissModalWindow = () => {
-        modalOverlay.classList.remove("modal-active");
-        modalOverlay.setAttribute("aria-hidden", "true");
-        if (activeTriggerElement) {
-            activeTriggerElement.focus();
-        }
-    };
-
-    closeBtn.addEventListener("click", dismissModalWindow);
-    
-    // Close modal if user clicks on background overlay blur area
-    modalOverlay.addEventListener("click", (e) => {
-        if (e.target === modalOverlay) {
-            dismissModalWindow();
-        }
-    });
-
-    // Close modal if user presses Escape key
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalOverlay.classList.contains("modal-active")) {
-            dismissModalWindow();
-        }
-    });
-}
-

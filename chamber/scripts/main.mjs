@@ -60,3 +60,38 @@ function initializeDarkMode() {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", () => {
+    initializeFormTimestamp();
+    initializeModalDialogs();
+});
+
+function initializeFormTimestamp() {
+    const timestampField = document.getElementById("form-timestamp");
+    if (timestampField) {
+        timestampField.value = Date.now();
+    }
+}
+
+function initializeModalDialogs() {
+    const openButtons = document.querySelectorAll(".open-modal");
+    const closeButtons = document.querySelectorAll(".close-modal");
+
+    openButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modalId = button.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.showModal();
+            }
+        });
+    });
+
+    closeButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const modal = button.closest("dialog");
+            if (modal) {
+                modal.close();
+            }
+        });
+    });
+}

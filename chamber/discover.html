@@ -5,26 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kabwe Chamber of Commerce - Discover</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <meta name="description" content="Welcome to the Kabwe Chamber of Commerce portal page network hub.">
+    <meta name="description" content="Explore regional history, demographics, and beautiful photo landmarks across the Kabwe region.">
     <meta name="author" content="Munshimbwe Kafwanka">
-    
-    <!-- Open Graph Protocol Metadata -->
-    <meta property="og:title" content="Kabwe Chamber of Commerce - Discover">
+    <meta property="og:title" content="Kabwe Chamber of Commerce - Discover Gateway">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://github.io">
-    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/chamber-hero.webp">
-    <meta property="og:description" content="Explore regional history, community demographics, and view photos of the Kabwe region.">
-    
+    <meta property="og:url" content="https://munshimbwe.github.io/wdd231/chamber/discover.html">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/chamber/images/nature.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <script type="module" src="scripts/discover.js"></script>
-    <script type="module" src="scripts/utils.js"></script>
 </head>
 <body>
 
@@ -44,79 +38,113 @@
     </nav>
 
     <main>
-        <h1>Discover Our Community</h1>
+        <h1>Discover Our Community Landmarks</h1>
         
-        <!-- Live Visitor Telemetry Display Bar -->
-        <div id="visitTrackingMessage" class="info-card-text" style="background-color: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1rem; font-weight: 600; text-align: center; margin-bottom: 1.5rem;">
+        <div id="visitTrackingMessage" class="visitor-alert-banner">
             Initializing tracking metrics...
         </div>
         
         <div class="discover-content">
+            
             <section class="info-card">
-                <img src="images/nature.webp" alt="Historic Kabwe architecture thumbnail" class="info-card-img" loading="lazy">
-                <div class="info-card-text">
-                    <h2>Local History</h2>
-                    <p>Founded in the late 19th century, our region quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development.</p>
-                    <button class="btn-learn-more" data-modal-target="history">Learn More</button>
+                <h2 class="card-top-title">Local History Hub</h2>
+                <div class="card-split-body">
+                    <img src="images/nature.webp" alt="Historic Kabwe architecture thumbnail" class="info-card-img" loading="lazy" width="400" height="300">
+                    <div class="info-card-text">
+                        <p>Founded in the late 19th century, our region quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development.</p>
+                        <button class="btn-learn-more" data-modal-target="history">Learn More</button>
+                    </div>
                 </div>
             </section>
 
             <section class="info-card">
-                <img src="images/cuisine.webp" alt="Marketplace workforce thumbnail" class="info-card-img" loading="lazy">
-                <div class="info-card-text">
-                    <h2>Current Demographics</h2>
-                    <p>Home to over 150,000 residents, our area boasts a diverse professional marketplace. With an annual growth rating exceeding national benchmarks.</p>
-                    <button class="btn-learn-more" data-modal-target="demographics">Learn More</button>
+                <h2 class="card-top-title">Current Demographics</h2>
+                <div class="card-split-body">
+                    <img src="images/cuisine.webp" alt="Marketplace workforce thumbnail" class="info-card-img" loading="lazy" width="400" height="300">
+                    <div class="info-card-text">
+                        <p>Home to over 228 598 residents, our area boasts a highly diverse professional marketplace with an annual growth rating exceeding national benchmarks.</p>
+                        <button class="btn-learn-more" data-modal-target="demographics">Learn More</button>
+                    </div>
                 </div>
             </section>
 
+            
+
             <section class="info-card">
-                <img src="images/boat-cruise.webp" alt="Chamber events thumbnail" class="info-card-img" loading="lazy">
-                <div class="info-card-text">
-                    <h2>Upcoming Regional Events</h2>
-                    <p>Join us next month for our Annual Economic Integration Gala, featuring keynote distributions from leading corporate developers.</p>
-                    <button class="btn-learn-more" data-modal-target="events">Learn More</button>
+                <h2 class="card-top-title">River Activities</h2>
+                <div class="card-split-body">
+                    <img src="images/boat-cruise.webp" alt="Chamber events thumbnail" class="info-card-img" loading="lazy" width="400" height="300">
+                    <div class="info-card-text">
+                        <p>Water activities such as boat cruises and riverfront picnics are popular among locals and visitors alike.</p>
+                        <button class="btn-learn-more" data-modal-target="events">Learn More</button>
+                    </div>
+                </div>
+            </section>
+
+        
+            <section class="info-card">
+                <h2 class="card-top-title">Mulungushi Dam</h2>
+                <div class="card-split-body">
+                    <img src="images/mulungushi-dam.webp" alt="Breathtaking Mulungushi Dam" loading="lazy" width="400" height="300" class="info-card-img">
+                    <div class="info-card-text">
+                        <p>Constructed by Broken Development Company. located 50 kilometres southeast of kabwe.</p>
+                        <button class="btn-learn-more" data-modal-target="dam">Learn More</button>
+                    </div>
+                </div>
+            </section>
+            <section class="info-card">
+                <h2 class="card-top-title">Prayer Mountain</h2>
+                <div class="card-split-body">
+                    <img src="images/kafulamase-mountain-also.webp" alt="Scenic Mountain Landscape and Recreation Fields" loading="lazy" width="400" height="300" class="info-card-img">
+                    <div class="info-card-text">
+                        <p>Explore panoramic hiking trails and eco-tourism tracks scaling scenic summits designed for premium regional outdoor adventure operations.</p>
+                        <button class="btn-learn-more" data-modal-target="mountain">Learn More</button>
+                    </div>
+                </div>
+            </section>
+            <section class="info-card">
+                <h2 class="card-top-title">River Boat Activities</h2>
+                <div class="card-split-body">
+                    <img src="images/boat-cruise.webp" alt="Local river boat cruise" loading="lazy" width="400" height="300" class="info-card-img">
+                    <div class="info-card-text">
+                        <p>Relax with premium weekend sunset canoeing operating along our central commercial river channels.</p>
+                        <button class="btn-learn-more" data-modal-target="cruise">Learn More</button>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="info-card">
+                <h2 class="card-top-title">Boat Cruise on Water Bodies</h2>
+                <div class="card-split-body">
+                    <img src="images/boat-rides.webp" alt="Riverfront for river activities" loading="lazy" width="400" height="300" class="info-card-img">
+                    <div class="info-card-text">
+                        <p>These two rivers flow into the western end of the Luangwa Rift valley just over 50km south east of kabwe.</p>
+                        <button class="btn-learn-more" data-modal-target="riverfront">Learn More</button>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="info-card">
+                <h2 class="card-top-title">Kabwe Safari Lodge</h2>
+                <div class="card-split-body">
+                    <img src="images/nature.webp" alt="Nature Reserve Wilderness Path" loading="lazy" width="400" height="300" class="info-card-img">
+                    <div class="info-card-text">
+                        <p>A modern lodge built with a side of nature for those who wuold love to express nature in comfortable surroundings.</p>
+                        <button class="btn-learn-more" data-modal-target="nature">Learn More</button>
+                    </div>
                 </div>
             </section>
         </div>
-
-        <section class="montage-section">
-            <h2>Area Photo Gallery</h2>
-            <div class="gallery-montage">
-                <div class="montage-item">
-                    <img src="images/mulungushi-dam.webp" alt="Breathtaking Mulungushi Dam" loading="lazy" width="400" height="300">
-                    <div class="caption">Mulungushi Dam</div>
-                </div>
-                <div class="montage-item">
-                    <img src="images/kafulamase-mountain-also.webp" alt="Scenic Mountain Landscape and Recreation Fields" loading="lazy" width="400" height="300">
-                    <div class="caption">Mountain Recreation</div>
-                </div>
-                <div class="montage-item">
-                    <img src="images/boat-cruise.webp" alt="Local river boat cruise" loading="lazy" width="400" height="300">
-                    <div class="caption">Boat Cruise</div>
-                </div>
-                <div class="montage-item">
-                    <img src="images/boat-rides.webp" alt="Riverfront for river activities" loading="lazy" width="400" height="300">
-                    <div class="caption">Riverfront Park</div>
-                </div>
-                <div class="montage-item">
-                    <img src="images/nature.webp" alt="Nature Reserve" loading="lazy" width="400" height="300">
-                    <div class="caption">Nature Reserve</div>
-                </div>
-                <div class="montage-item">
-                    <img src="images/cuisine.webp" alt="Local Cuisine" loading="lazy" width="400" height="300">
-                    <div class="caption">Local Cuisine</div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <!-- Accessible Modal Container Element -->
+    
     <div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="modal-window">
             <h3 id="modalTitle">Modal Details Header</h3>
             <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
-            <button id="closeModalBtn" class="btn-submit" style="background-color: #7f8c8d;">Dismiss</button>
+            <button id="closeModalBtn" class="btn-submit">Dismiss Details</button>
         </div>
     </div>
     
@@ -136,14 +164,10 @@
                     </svg>
                 </a>
                 <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X">
-                    <svg viewBox="0 0 24 24" class="social-icon">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" class="social-icon"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" class="social-icon">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24" class="social-icon"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                 </a>
             </div>
         </div>

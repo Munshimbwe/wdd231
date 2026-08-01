@@ -68,3 +68,8 @@
         gap: 2rem;
     }
 }
+.form-layout {
+    grid-template-columns: 3fr 2fr;
+    gap: 2.5rem;
+    align-items: start;
+}

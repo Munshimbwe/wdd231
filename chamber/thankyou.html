@@ -6,10 +6,12 @@
     <title>Thank You - Kabwe Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/large.css" media="(min-width: 768px)">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script type="module" src="scripts/main.mjs"></script>
+    
+    
+    <script type="module" src="scripts/thankyou.js"></script>
 </head>
 <body class="chamber-form-page">
     <header>
@@ -26,13 +28,14 @@
         </nav>
     </header>
 
-    <main class="thankyou-main">
-        <h1>Thank You for Joining!</h1>
-        <p>We have successfully received your membership application. Below are the details you provided:</p>
+    <main class="thankyou-main" style="padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; text-align: center;">
+        <h1 style="color: #d45900; margin-bottom: 0.5rem;">Thank You for Joining!</h1>
+        <p style="font-size: 1.1rem; color: #444444; margin-bottom: 2rem;">We have successfully received your membership application. Below are the details you provided:</p>
 
-        <div id="submission-display" class="submission-card"></div>
+        <div id="submission-display" class="submission-card" style="text-align: left;"></div>
     </main>
-<footer>
+
+    <footer>
         <div class="footer-contact">
             <strong>Kabwe Chamber of Commerce</strong>
             <p>10 Independence Avenue</p>

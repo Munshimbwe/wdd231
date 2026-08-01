@@ -368,3 +368,233 @@
         color: #ffffff !important;
     }
 }
+.form-layout {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.form-section, .benefits-section {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+main h1 {
+    color: #d9531e;
+    border-left: 5px solid #d9531e;
+    padding-left: 12px;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+.form-section h2 {
+    color: #222c3c;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.form-section form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-section form fieldset,
+.form-section form > label:nth-of-type(7),
+.form-section form .cta-button {
+    grid-column: span 2;
+}
+
+.form-section form > label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+    gap: 8px;
+}
+
+.form-section input[type="text"],
+.form-section input[type="email"],
+.form-section input[type="tel"],
+.form-section textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-weight: normal;
+}
+
+.form-section input:focus, 
+.form-section textarea:focus {
+    border-color: #d9531e;
+    box-shadow: 0 0 0 3px rgba(217, 83, 30, 0.15);
+    outline: none;
+}
+
+.form-section fieldset {
+    border: 1px solid #e0e0e0;
+    padding: 15px 20px;
+    border-radius: 6px;
+    background-color: #fafafa;
+    margin: 5px 0;
+}
+
+.form-section legend {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 0 8px;
+    color: #333;
+}
+
+.form-section .radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-weight: normal;
+    font-size: 15px;
+    padding: 5px 0;
+}
+
+.form-section .radio-label input[type="radio"] {
+    margin: 0;
+    accent-color: #d9531e;
+    transform: scale(1.1);
+}
+
+.form-section .cta-button {
+    background-color: #0091d2;
+    color: #ffffff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    justify-self: start;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.form-section .cta-button:hover {
+    background-color: #0077b3;
+}
+
+.form-section .cta-button:active {
+    transform: scale(0.98);
+}
+.confirmation-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.thank-you-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.thank-you-header .orange-bar {
+    color: #d9531e;
+    font-size: 32px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.thank-you-header h1 {
+    color: #d9531e;
+    display: inline-block;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    vertical-align: middle;
+}
+
+.thank-you-header p {
+    color: #555555;
+    font-size: 16px;
+}
+
+.summary-box {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    padding: 30px;
+    border-top: 5px solid #d9531e;
+}
+
+.summary-box h2 {
+    color: #222c3c;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 10px;
+}
+
+.summary-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.summary-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #666666;
+}
+
+.summary-value {
+    font-size: 15px;
+    color: #222c3c;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.tier-badge {
+    display: inline-block;
+    background-color: #fdf6f0;
+    color: #d9531e;
+    padding: 3px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 13px;
+    width: fit-content;
+    border: 1px solid #f5decb;
+}
+
+.submission-time {
+    background-color: #fafafa;
+    margin-top: 10px;
+    padding: 12px 10px;
+    border-radius: 4px;
+    border: 1px dashed #e0e0e0;
+}

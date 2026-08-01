@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    
+    <script type="module" src="scripts/main.mjs" defer></script>
     <script type="module" src="scripts/thankyou.js"></script>
 </head>
 <body class="chamber-form-page">
@@ -28,13 +28,56 @@
         </nav>
     </header>
 
-    <main class="thankyou-main" style="padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; text-align: center;">
-        <h1 style="color: #d45900; margin-bottom: 0.5rem;">Thank You for Joining!</h1>
-        <p style="font-size: 1.1rem; color: #444444; margin-bottom: 2rem;">We have successfully received your membership application. Below are the details you provided:</p>
+    <main class="confirmation-container">
+    <div class="thank-you-header">
+        <span class="orange-bar">|</span>
+        <h1>Thank You for Joining!</h1>
+        <p>We have successfully received your membership application. Below are the details you provided:</p>
+    </div>
 
-        <div id="submission-display" class="submission-card" style="text-align: left;"></div>
-    </main>
-
+    <div class="summary-box">
+        <h2>Application Summary</h2>
+        
+        <div class="summary-list">
+            <div class="summary-row">
+                <span class="summary-label">First Name</span>
+                <span id="display-firstname" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Last Name</span>
+                <span id="display-lastname" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Organizational Title</span>
+                <span id="display-title" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Email Address</span>
+                <span id="display-email" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Mobile Phone</span>
+                <span id="display-phone" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Organization Name</span>
+                <span id="display-organization" class="summary-value"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Membership Tier</span>
+                <span id="display-tier" class="summary-value tier-badge"></span>
+            </div>
+            <div class="summary-row">
+                <span class="summary-label">Business Description</span>
+                <span id="display-description" class="summary-value"></span>
+            </div>
+            <div class="summary-row submission-time">
+                <span class="summary-label">Submission Timestamp</span>
+                <span id="display-timestamp" class="summary-value"></span>
+            </div>
+        </div>
+    </div>
+</main>
     <footer>
         <div class="footer-contact">
             <strong>Kabwe Chamber of Commerce</strong>

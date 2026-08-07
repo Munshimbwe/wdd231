@@ -6,6 +6,6 @@
   { "name": "Grand Itabwa Fitness Center", "tagline": "Community health and athletic development", "email": "train@granditabwa.com", "phone": "260-555-0588", "url": "granditabwafit.com", "image": "images/granditabwa.webp" },
   { "name": "Great Lake Mweru Logistics", "tagline": "Global supply chains made accessible", "email": "ship@greatlakemweru.com", "phone": "260-555-0612", "url": "greatlakemweru.com", "image": "images/greatlake.webp"},
   { "name": "Kabwe Mall", "tagline": "Regional product networks under one roof", "email": "sales@kabwemall.com", "phone": "260-555-0741", "url": "kabwe.com", "image": "images/kabwemall.webp" },
-  { "name": "Mulungushi VVIP Security", "tagline": "We protect what matters", "email": "create@mulungushi.com", "phone": "260-555-0833", "url": "mulungushi.com", "image": "images/mulungushi.webp" },
+  { "name": "Mulungushi VVIP Security", "tagline": "We protect what matters", "email": "create@mulungushi.com", "phone": "260-555-0833", "url": "mulungushi.com", "image": "images/mulungushi.webp"},
   { "name": "Copperbelt Financial", "tagline": "Secure wealth stewardship and planning", "email": "wealth@copperbeltfin.com", "phone": "801-555-0922", "url": "copperbelt.com", "image": "images/copperbeltfinancial.webp" }
 ]

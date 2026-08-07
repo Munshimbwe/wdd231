@@ -625,7 +625,8 @@ gap: 1rem;
 }
 .hero h1 {font-size: 2rem;
 }
-.filter-wrapper {flex-direction: column;
-align-items: flex-start;
-
+.filter-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
 }
+} 

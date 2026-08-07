@@ -1,3 +1,4 @@
+import { initializeGlobalThemeAndNav, initializeGlobalVisitTracker } from './utils.js'
 const modalContentRegistry = {
     history: {
         title: "Kabwe Historical Heritage",
@@ -33,40 +34,12 @@ const modalContentRegistry = {
     }
 };
 
+
 document.addEventListener("DOMContentLoaded", () => {
+    initializeGlobalThemeAndNav();
     initializeGlobalVisitTracker();
     initializeAccessibilityModal();
 });
-
-function initializeGlobalVisitTracker() {
-    const trackingFeedbackBox = document.getElementById("visitTrackingMessage");
-    if (!trackingFeedbackBox) return;
-
-    const currentTimestamp = Date.now();
-    const rawLastVisitedValue = localStorage.getItem("chamberPlatformLastVisitToken");
-
-    if (!rawLastVisitedValue) {
-        trackingFeedbackBox.textContent = "Welcome! Let us know if you have any questions.";
-        localStorage.setItem("chamberPlatformLastVisitToken", currentTimestamp);
-        return;
-    }
-
-    const lastVisitedTimestamp = parseInt(rawLastVisitedValue, 10);
-    const timeDifferenceMs = currentTimestamp - lastVisitedTimestamp;
-    
-    const msInOneDay = 1000 * 60 * 60 * 24;
-    const computedWholeDays = Math.floor(timeDifferenceMs / msInOneDay);
-
-    if (timeDifferenceMs < msInOneDay) {
-        trackingFeedbackBox.textContent = "Back so soon! AWESOME!";
-    } else if (computedWholeDays === 1) {
-        trackingFeedbackBox.textContent = "You last visited 1 day ago.";
-    } else {
-        trackingFeedbackBox.textContent = `You last visited ${computedWholeDays} days ago.`;
-    }
-
-    localStorage.setItem("chamberPlatformLastVisitToken", currentTimestamp);
-}
 
 function initializeAccessibilityModal() {
     const modalOverlay = document.getElementById("infoModalOverlay");
@@ -82,14 +55,11 @@ function initializeAccessibilityModal() {
         button.addEventListener("click", (e) => {
             const targetKey = e.currentTarget.getAttribute("data-modal-target");
             const content = modalContentRegistry[targetKey];
-            
             if (content) {
                 activeTriggerElement = e.currentTarget;
                 modalTitle.textContent = content.title;
                 modalBody.textContent = content.text;
-                
                 modalOverlay.classList.add("modal-active");
-                modalOverlay.setAttribute("aria-hidden", "false");
                 closeBtn.focus();
             }
         });
@@ -97,21 +67,14 @@ function initializeAccessibilityModal() {
 
     const dismissModalWindow = () => {
         modalOverlay.classList.remove("modal-active");
-        modalOverlay.setAttribute("aria-hidden", "true");
-        if (activeTriggerElement) {
-            activeTriggerElement.focus();
-        }
+        if (activeTriggerElement) activeTriggerElement.focus();
     };
 
     closeBtn.addEventListener("click", dismissModalWindow);
-    
     modalOverlay.addEventListener("click", (e) => {
         if (e.target === modalOverlay) dismissModalWindow();
     });
-
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalOverlay.classList.contains("modal-active")) {
-            dismissModalWindow();
-        }
+        if (e.key === "Escape" && modalOverlay.classList.contains("modal-active")) dismissModalWindow();
     });
 }

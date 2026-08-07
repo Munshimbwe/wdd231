@@ -1,55 +1,62 @@
-const container = document.querySelector('#member-container');
-const gridBtn = document.querySelector('#grid-view-btn');
-const listBtn = document.querySelector('#list-view-btn');
-const dataUrl = 'data/directory.json';
+import { initializeGlobalThemeAndNav } from 'utils.js';
 
-async function getMembers() {
+document.addEventListener("DOMContentLoaded", async () => {
+    initializeGlobalThemeAndNav();
+    await loadChamberDirectoryDatabase();
+    initializeLayoutViewToggles();
+});
+
+async function loadChamberDirectoryDatabase() {
+    const displayContainer = document.getElementById("member-container");
+    if (!displayContainer) return;
+
     try {
-        const response = await fetch(dataUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP network error encountered: ${response.status}`);
-        }
-        const data = await response.json();
-        const sortedData = data.sort((a, b) => a.name.localeCompare(b.name));
-        renderDirectory(sortedData);
+        const response = await fetch("data/directory.json");
+        if (!response.ok) throw new Error("JSON Directory Error");
+        const membersDataArray = await response.json();
+        renderDirectoryCards(membersDataArray, displayContainer);
     } catch (error) {
-        container.innerHTML = `<p class="error-msg">Unable to process directory data list at this time.</p>`;
+        displayContainer.innerHTML = `<p class="visitor-alert-banner">Error parsing directory listings database. Offline fallback running.</p>`;
     }
 }
 
-function renderDirectory(memberArray) {
-    container.innerHTML = '';
-    memberArray.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('directory-card');
+function renderDirectoryCards(dataset, containerNode) {
+    containerNode.innerHTML = "";
+    
+    dataset.forEach(business => {
+        const cardArticle = document.createElement("article");
+        cardArticle.className = `directory-card tier-${business.tier}`;
         
-        card.innerHTML = `
+        cardArticle.innerHTML = `
             <div class="card-logo-container">
-                <img src="${member.image}" alt="${member.name} Logo" loading="lazy">
+                <img src="${business.icon}" alt="${business.name} branding" loading="lazy" width="180" height="70">
             </div>
-            <h3 class="member-name" style="margin: 0 0 10px 0; font-size: 1.2rem; color: var(--text-dark); text-align: center;">${member.name}</h3>
-            <p class="address-line">${member.address || member.tagline}</p>
-            <p class="phone-line">${member.phone}</p>
-            <a href="${member.url}" target="_blank" rel="noopener noreferrer" class="member-link">${member.url}</a>
+            <h3>${business.name}</h3>
+            <p>${business.address}</p>
+            <p>${business.phone}</p>
+            <span class="membership-badge">${business.tier.toUpperCase()} MEMBER</span>
+            <a href="${business.website}" target="_blank" rel="noopener noreferrer" class="member-link">Visit Website</a>
         `;
-        container.appendChild(card);
+        containerNode.appendChild(cardArticle);
     });
 }
 
-gridBtn.addEventListener('click', () => {
-    container.classList.remove('list-layout');
-    container.classList.add('grid-layout');
-    gridBtn.classList.add('active-filter');
-    listBtn.classList.remove('active-filter');
-});
+function initializeLayoutViewToggles() {
+    const gridBtn = document.getElementById("grid-view-btn");
+    const listBtn = document.getElementById("list-view-btn");
+    const targetContainer = document.getElementById("member-container");
 
-listBtn.addEventListener('click', () => {
-    container.classList.remove('grid-layout');
-    container.classList.add('list-layout');
-    listBtn.classList.add('active-filter');
-    gridBtn.classList.remove('active-filter');
-});
+    if (!gridBtn || !listBtn || !targetContainer) return;
 
-document.addEventListener('DOMContentLoaded', () => {
-    getMembers();
-});
+    gridBtn.addEventListener("click", () => {
+        targetContainer.className = "grid-layout";
+        gridBtn.classList.add("active-filter");
+        listBtn.classList.remove("active-filter");
+    });
+
+    listBtn.addEventListener("click", () => {
+        targetContainer.className = "list-layout";
+        listBtn.classList.add("active-filter");
+        gridBtn.classList.remove("active-filter");
+    });
+}

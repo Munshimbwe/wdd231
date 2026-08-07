@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinSpace | Account Profile Settings</title>
+    <meta name="description" content="Manage your personalized KinSpace account preferences, updates, notification configurations, and clan memberships securely.">
+    <meta name="author" content="WDD 231 Student">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:title" content="KinSpace | Manage Profile">
+    
+    <meta property="og:image" content="images/familybiking.webp">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles/kinspace.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <span class="logo-mark">🌐</span>
+                <h1 class="logo-text">KinSpace</h1>
+            </div>
+            
+            <nav id="primary-nav">
+                <button id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul id="nav-links">
+                    <li><a href="index.html" class="nav-item">Feed</a></li>
+                    <li><a href="discover.html" class="nav-item">Discover</a></li>
+                    <li><a href="profile.html" class="nav-item active">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar-left">
+            <section id="weather-widget" class="card">
+                <h2>Local Climate</h2>
+                <div id="weather-display">
+                    <p class="loading-text">Fetching OpenWeatherMap data...</p>
+                </div>
+            </section>
+        </aside>
+
+        <main id="main-feed-content">
+            <section class="card">
+                <h2>Account Settings Setup</h2>
+                <form method="get" action="thankyou.html" id="profile-update-form">
+                    
+                    <div class="form-group">
+                        <label for="full-name">Full Identification Name:</label>
+                        <input type="text" id="full-name" name="fullName" placeholder="e.g. John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-handle">Platform Handle Username:</label>
+                        <input type="text" id="user-handle" name="userHandle" placeholder="e.g. johndoe_codes" pattern="^[a-z0-9_]{3,15}$" title="Lowercase, numbers, or underscores only. 3-15 characters." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-email">Primary Contact Email Address:</label>
+                        <input type="email" id="user-email" name="userEmail" placeholder="name@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primary-clan">Primary Core Community Clan:</label>
+                        <select id="primary-clan" name="primaryClan" required>
+                            <option value="">-- Choose Target Space --</option>
+                            <option value="announcements">Announcements Hub</option>
+                            <option value="javascript">JavaScript Engineering</option>
+                            <option value="accessibility">Accessibility Frameworks</option>
+                            <option value="performance">Performance Optimization</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-bio">Brief Account Narrative Biography:</label>
+                        <textarea id="user-bio" name="userBio" placeholder="Tell your kin network something about your work..."></textarea>
+                    </div>
+
+                    <div class="form-group check-group">
+                        <input type="checkbox" id="marketing-opt" name="marketingOpt" value="yes" checked>
+                        <label for="marketing-opt">Subscribe to platform digest email dispatches</label>
+                    </div>
+
+                    <button type="submit" class="action-btn">Commit Account Configurations</button>
+                </form>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <section id="user-preferences" class="card">
+                <h2>Preferences</h2>
+                <p>Customise your experience local-side.</p>
+                <button id="theme-toggle-btn" class="action-btn">Toggle Dark Mode</button>
+            </section>
+        </aside>
+
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> KinSpace Platform. All rights reserved.</p>
+            <p>WDD 231 Final Project Module Suite.</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" id="citations-link">Resource Attributions</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Planning document for the KinSpace web application, outlining its structure, design, and functionality.">
+    <meta name="author" content="Munshimbwe Kafwanka">
+    <title>KinSpace Site Plan Document</title>
+    <link rel="stylesheet" href="../project/styles/siteplan.css">
+</head>
+<body>
+
+    <header>
+        <h1>👨‍👩‍👧‍👦 KinSpace Web Planning Document</h1>
+        <p>Official Project Site Plan & Architectural Blueprint</p>
+    </header>
+
+    <main>
+        <section>
+            <h1>1. Site Name</h1>
+            <p><strong>KinSpace</strong></p>
+            <ul>
+                <li>The first name was Kinunite but changed to KinSpace. This name represents an isolated, secure social hub that is focused on connecting parents, children, and extended family relatives safely. It speaks to what the platform is all about.</li>
+            </ul>
+            <p><strong>Optional domain availability:</strong> <code>mykinspace.org</code></p>
+        </section>
+
+        <section>
+            <h2>2. Site Purpose</h2>
+            <p><strong>For KinSpace:</strong></p>
+            <ul>
+                <li>The site provides a secure hub for closed-network family communication by providing private media sharing feeds, interactive outdoor safety calculation logs, and an educational child-safe AI inquiry assistant along with a new family unit registration form.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Scenarios</h2>
+            <p><strong>For KinSpace:</strong></p>
+            <ul>
+                <li>How can I verify if outdoor wind chill levels are safe enough for my children to play outside?</li>
+                <li>Where can a parent monitor daily device screen time usage or approve connection requests from relatives?</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. Color Schema</h2>
+            <p>The visual identity relies on three core colors chosen for their psychological association with safety, reliability, and youthfulness:</p>
+            <ul>
+                <li><span class="color-badge" style="background-color: #4A90E2;"></span> <strong>Primary Blue (#4A90E2):</strong> Used for global navigation bars, links, accents, and focal portal control buttons to project trust and structural stability.</li>
+                <li><span class="color-badge" style="background-color: #2C3E50;"></span> <strong>Dark Slate (#2C3E50):</strong> Used for headings, standard body text strings, and layout headers/footers to maximize text contrast compliance ratios.</li>
+                <li><span class="color-badge" style="background-color: #2ECC71;"></span> <strong>Accent Green (#2ECC71):</strong> Used for call-to-action registration modules, form success validation indicators, and safety approvals to create a welcoming, kid-friendly aesthetic.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Color Scheme Used on Document</h2>
+            <p>This site planning document utilizes the exact primary hex colors defined in Section 4 above, establishing brand styling continuity between the planning documents and the production codebase.</p>
+        </section>
+
+        <section>
+            <h2>6. Typography</h2>
+            <ul>
+                <li><strong>🎨 Primary Font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif</strong></li>
+                <li>This font will be used globally across all main headers, body paragraphs, interactive navigation links, tool layout fields, and system buttons to maximize viewing accessibility for all user age groups.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>7. Typography Used on Document</h2>
+            <p>This planning specification prints natively in the <code>'Segoe UI'</code> san-serif font cascade family established in Section 9, proving technical specification parity across all project files.</p>
+        </section>
+
+        <section>
+            <h2>8. Wireframes</h2>
+            <p>Below are the structural wireframe blueprints mapping the responsive card layout rules for the core landing template viewport parameters:</p>
+
+            <h3>A. Mobile Wireframe Viewport Layout</h3>
+<pre>
++---------------------------------------+
+
+
+
+|  👨‍👩‍👧‍👦 KinSpace                     [☰] | &lt;-- Navbar with Hamburger Icon
++---------------------------------------+
+
+
+
+|                                       |
+|  📋 Navigation Guide                  | &lt;-- Table of Contents Stacks Top
+|  - Features | - Register | - Tools    |
+|                                       |
++---------------------------------------+
+
+
+
+|                                       |
+|  Social Media Built for Families. 🚀  | &lt;-- Hero Typography Block
+|  [ Create Family Account 🎉 ]          | &lt;-- Full-Width CTA Action Button
+|                                       |
++---------------------------------------+
+
+
+
+|  🔒 Private Hubs                      |
+|  Share photos exclusively... 🏡       | &lt;-- Core Feature Cards Stack 
++---------------------------------------+     Vertically as a Single-Column
+
+
+
+|  🎨 Kids' Explore                     |     Layout for Simple Phone Scrolling
+|  Curated educational content... 📚    |
++---------------------------------------+
+
+
+
+|  🛡️ Parent Control                    |
+|  Manage screen time limits... 📱       |
++---------------------------------------+
+
+
+
+|  Outdoor Play Safety Check 🌦️         |
+|  [☀️] 24°C (Sunny Day)                | &lt;-- Interactive Tool Panels
+|  💨 Calculate Wind Chill Factor       |     Stack Vertically Down Page
+|  [Temp Input ] [Wind Input ]          |
+|  [ Calculate Chill ]                  |
++---------------------------------------+
+
+
+|  Page Last Modified: 01 Jun 2026      | &lt;-- Footer Utility Indicators
++---------------------------------------+
+</pre>
+
+            <h3>B. Desktop Large Viewport Layout</h3>
+<pre>
++-----------------------------------------------------------------------------------------------+
+
+
+|  👨‍👩‍👧‍👦 KinSpace                ✨ Features   📝 Register   🖼️ Gallery   🛡️ Dashboard  [🌓] [🔐 Login] | &lt;-- Full Bar Link Menu
++-----------------------------------------------------------------------------------------------+
+
+
+|                               |                                                               |
+|  📋 Navigation Guide          |   Social Media Built for Families. 🚀                          | &lt;-- Main Row Split:
+|                               |   A secure, moderated digital space for connections.          |     Fixed Left Sidebar
+|  - ✨ Features                |   [ Create Family Account 🎉 ]                                 |     TOC Component
+|  - 🌦️ Weather & Safety        |                                                               |     Complements Fluid
+|  - 🤖 Ask AI Tool             |---------------------------------------------------------------|     Right-Side Layout
+|                               |                                                               |
+|                               |   +-------------------+ +-------------------+ +---------------+ |
+|                               |   | 🔒 Private Hubs   | | 🎨 Kids' Explore  | | 🛡️ Parent Ctrl| | &lt;-- Responsive Grid Items Scale
+|                               |   | Share photos...🏡 | | Curated... 📚     | | Manage... 📱  | |     Into a Flawless Three-Column 
+|                               |   +-------------------+ +-------------------+ +---------------+ |     Desktop Array Row
+|                               |                                                               |
+|                               |---------------------------------------------------------------|
+|                               |                                                               |
+|                               |   Outdoor Play Safety Check 🌦️                                 |
+|                               |   [☀️] 24°C (Sunny Day)   |  💨 Calculate Wind Chill           | &lt;-- Utility Component Arrays Split
+|                               |                           |  Temp: [__] Wind: [__] [Calculate]|     Cleanly Into Side-By-Side Rows
+
+
+
+
+
+|                               |                           |  Wind Chill Result: --            ||||
++-----------------------------------------------------------------------------------------------+
+|  © 2026 KinSpace Platform. All rights reserved. 🛡️ | Munshimbwe Kafwanka |⚒️ Kabwe, Zambia⚒️ 
+Page Last Modified: 01 Jun 2026 13:08  
+| <-- Wide Contrast Footer Grid
++-----------------------------------------------------------------------------------------------+
+
+
+

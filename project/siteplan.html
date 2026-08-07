@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinSpace | Website Site Plan</title>
+    <style>
+        :root {
+            --bg-surface: #f3f4f6;
+            --bg-card: #ffffff;
+            --primary-brand: #4f46e5;
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --border-divider: #e5e7eb;
+            --accent-tint: #e0e7ff;
+            --accent-text: #3730a3;
+        }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: var(--primary-brand);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-divider);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: var(--primary-brand);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--border-divider);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        p, ul, ol {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .color-palette {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .color-box {
+            border: 1px solid var(--border-divider);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .cb-surface {
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+        }
+        .cb-card {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+        }
+        .cb-brand {
+            background-color: var(--primary-brand);
+            color: #ffffff;
+        }
+        .cb-text {
+            background-color: var(--text-primary);
+            color: #ffffff;
+        }
+        .cb-accent {
+            background-color: var(--accent-tint);
+            color: var(--accent-text);
+        }
+        .wireframe-container {
+            margin-top: 20px;
+        }
+        .wireframe-block {
+            background-color: var(--bg-surface);
+            border: 2px dashed #9ca3af;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-family: monospace;
+        }
+        .wireframe-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .wf-element {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .wf-row {
+            display: grid;
+            gap: 10px;
+        }
+        .desktop-grid {
+            grid-template-columns: 200px 1fr 220px;
+        }
+        @media (max-width: 768px) {
+            .desktop-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>KinSpace Project Site Plan</h1>
+            <p>WDD 231 Web Frontend Development Academic Framework Specification Ledger</p>
+        </header>
+
+        <section>
+            <h2>Site Purpose & Core Target Audience</h2>
+            <p>KinSpace functions as a modular, lightweight social utility designed specifically for student engineering teams, peer cohorts, and familial clans. The primary purpose is to deliver an interface emphasizing extreme data utility, accessibility compliance, and structural performance profiles under tight networking bandwidth parameters.</p>
+            <p>The target audience encompasses web engineering students, digital clans seeking specialized collaboration nodes, and users accessing resources from entry-level mobile platforms requiring low-footprint page transfers under 500kB boundaries.</p>
+        </section>
+
+        <section>
+            <h2>Application Architecture & Page Tree</h2>
+            <p>The application consists of three main content pages and one supplemental action handler target page:</p>
+            <ol>
+                <li><strong>Home Feed Node (index.html):</strong> Central social logging channel displaying local asynchronous JSON content and weather API widgets.</li>
+                <li><strong>Discover Hub (discover.html):</strong> Community indexing matrix featuring categorized cards sorted by tag grouping frameworks.</li>
+                <li><strong>Profile Workspace (profile.html):</strong> Interactive secure user validation form capturing customer environment flags.</li>
+                <li><strong>Data Handler Page (thankyou.html):</strong> Parametric interceptor page displaying processed customer inputs on confirmation lists.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Design Schema & Visual Assets Configuration</h2>
+            
+            <h3>Color Palette Infrastructure</h3>
+            <div class="color-palette">
+                <div class="color-box cb-surface">Surface Background<br>#f3f4f6</div>
+                <div class="color-box cb-card">Component Cards<br>#ffffff</div>
+                <div class="color-box cb-brand">Primary Indigo Brand<br>#4f46e5</div>
+                <div class="color-box cb-text">Primary Text Content<br>#1f2937</div>
+                <div class="color-box cb-accent">Accent Badge Tint<br>#e0e7ff</div>
+            </div>
+
+            <br>
+            <h3>Typography Enforcements</h3>
+            <ul>
+                <li><strong>System Font Stack:</strong> system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif.</li>
+                <li><strong>Structural Headings Hierarchy:</strong> Primary branding marks scale to 1.35rem header-side. Document card contextual roots utilize 1.15rem sizes for scannability.</li>
+                <li><strong>Body Layout Sizing:</strong> Fixed at 1rem with standard 1.5 line heights to maintain strict cross-platform eligibility.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Structural Application Wireframes</h2>
+            
+            <div class="wireframe-container">
+                <h3>Mobile Structural Topology (Viewport Width: 320px)</h3>
+                <div class="wireframe-block">
+                    <div class="wireframe-layout">
+                        <div class="wf-element">[ HEADER: Logo Mark + Hamburger Icon Menu Button ]</div>
+                        <div class="wf-element">[ SIDEBAR LEFT: Weather API Widget Display Panel ]</div>
+                        <div class="wf-element">[ MAIN CONTENT: Form Components / Active Social Activity Cards ]</div>
+                        <div class="wf-element">[ SIDEBAR RIGHT: Client-Side Preferences / Dark Mode Utility ]</div>
+                        <div class="wf-element">[ FOOTER: Attribution Links + Copyright Status Registers ]</div>
+                    </div>
+                </div>
+
+                <h3>Desktop Structural Topology (Viewport Width: 1200px Grid)</h3>
+                <div class="wireframe-block">
+                    <div class="wireframe-layout">
+                        <div class="wf-element">[ HEADER: Brand Label ------------------- Nav Links: Feed, Discover, Profile ]</div>
+                        <div class="wf-row desktop-grid">
+                            <div class="wf-element">[ SIDEBAR LEFT:<br>Live Local Climate Weather ]</div>
+                            <div class="wf-element">[ MAIN STREAM CONTENT AREA:<br>Dynamic JSON Content Feed Items / Form Control Fields ]</div>
+                            <div class="wf-element">[ SIDEBAR RIGHT:<br>Local Preferences Widget ]</div>
+                        </div>
+                        <div class="wf-element">[ FOOTER: System Attribution Citations Link &bull; Academic Dispatches Ledger ]</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

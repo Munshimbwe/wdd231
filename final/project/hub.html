@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KinSpace - Family Memory Wall</title>
+    <meta name="description" content="An interactive database dashboard layer for viewing private shared family memory modules and micro updates safely inside the home workspace.">
+    <meta name="keywords" content="family updates feed, private social gallery board, programmatic dom arrays mapping">
+    <meta name="author" content="Munshimbwe Kafwanka">
+    <link rel="stylesheet" href="styles/kinspace.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">👨‍👩‍👧‍👦 KinSpace</a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle structural navigation drawer">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">🏠 Home</a>
+                <a href="hub.html" class="active">🖼️ Memory Wall</a>
+                <a href="join.html">📝 Register</a>
+                <button id="themeToggle" class="btn-theme">🌙 Dark</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hub-hero">
+            <h1>The Family Memory Wall 🖼️</h1>
+            <p>A combined chronological archive where verified relatives document domestic achievements and day-to-day milestones seamlessly.</p>
+        </section>
+
+        <section class="tool-section filter-bar">
+            <div class="filter-wrapper">
+                <div class="filter-header-group">
+                    <h3>Filter Workspace Updates</h3>
+                    <p>Toggle parameters to filter down specific environmental memory locations.</p>
+                </div>
+                <div class="filter-select-group">
+                    <label for="filterCategoryMenu">Select Environment:</label>
+                    <select id="filterCategoryMenu">
+                        <option value="all">Show All Memories (Complete Hub)</option>
+                        <option value="indoor">Indoor Encounters 🏠</option>
+                        <option value="outdoor">Outdoor Operations 🌲</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="dynamicMemoryGrid" class="grid-layout gallery-grid-padding">
+            </div>
+        </section>
+
+        <section class="tool-section metrics-summary-panel">
+            <h3>📊 Platform Engagement Metrics</h3>
+            <div class="metrics-wrapper">
+                <p class="metrics-summary-text">Total Engagement Metric Units Tracked: <span id="totalEngagementDisplay" class="metrics-summary-value">0</span></p>
+                <p class="metrics-summary-text">Total Registrations System-wide: <span id="totalRegistrationsDisplay" class="metrics-summary-value">0</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️</p>
+        <p>Project Platform Location Deployment Node: ⚒️Kabwe, Zambia⚒️</p>
+        <p class="footer-modification-text">Page Last Modified: <span id="lastModifiedDate"></span></p>
+        <p class="footer-citations-link"><a href="references.html">View Sources & Citations Index</a></p>
+    </footer>
+
+    <script type="module" src="scripts/main.js"></script>
+
+</body>
+</html>

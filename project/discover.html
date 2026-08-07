@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinSpace | Discover Clan Communities</title>
+    <meta name="description" content="Explore new spaces, trending sub-groups, open engineering clans, and resource channels on the KinSpace grid.">
+    <meta name="author" content="WDD 231 Student">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:title" content="KinSpace | Discover Spaces">
+    <meta property="og:description" content="Browse community sectors and filter local network nodes dynamically.">
+    <meta property="og:image" content="images/site-preview.webp">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles/kinspace.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <span class="logo-mark">🌐</span>
+                <h1 class="logo-text">KinSpace</h1>
+            </div>
+            
+            <nav id="primary-nav">
+                <button id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul id="nav-links">
+                    <li><a href="index.html" class="nav-item">Feed</a></li>
+                    <li><a href="discover.html" class="nav-item active">Discover</a></li>
+                    <li><a href="profile.html" class="nav-item">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar-left">
+            <section id="weather-widget" class="card">
+                <h2>Local Climate</h2>
+                <div id="weather-display">
+                    <p class="loading-text">Fetching OpenWeatherMap data...</p>
+                </div>
+            </section>
+        </aside>
+
+        <main id="main-feed-content">
+            <section class="card">
+                <h2>Explore Active Communities</h2>
+                <p>Join specialized developer circles and collaborate with engineers worldwide.</p>
+            </section>
+
+            <section class="discover-grid">
+                <article class="card space-node">
+                    <h3>JavaScript Architecture</h3>
+                    <p>Discuss closures, modular pipelines, performance indexing, and ES structural design patterns.</p>
+                    <button class="action-btn">Enter Space</button>
+                </article>
+
+                <article class="card space-node">
+                    <h3>Universal Accessibility</h3>
+                    <p>Master semantic outlines, focus controls, color contrast guidelines, and ARIA roles mapping layouts.</p>
+                    <button class="action-btn">Enter Space</button>
+                </article>
+
+                <article class="card space-node">
+                    <h3>Performance & Opts</h3>
+                    <p>Strategies to enforce strict file compression quotas and maintain asset transfer sizes under 500kB rules.</p>
+                    <button class="action-btn">Enter Space</button>
+                </article>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <section id="user-preferences" class="card">
+                <h2>Preferences</h2>
+                <p>Customise your experience local-side.</p>
+                <button id="theme-toggle-btn" class="action-btn">Toggle Dark Mode</button>
+            </section>
+        </aside>
+
+    </div>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> KinSpace Platform. All rights reserved.</p>
+            <p>WDD 231 Final Project Module Suite.</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" id="citations-link">Resource Attributions</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

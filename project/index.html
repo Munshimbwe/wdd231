@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KinSpace | Connect with your Clan</title>
+    <meta name="description" content="KinSpace is an optimized, responsive social platform designed to bring families, friend groups, and tight-knit communities together.">
+    <meta name="author" content="WDD 231 Student">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta property="og:title" content="KinSpace | Your Local Community Network">
+    <meta property="og:description" content="Connect instantly with your clan on a clean, dynamic, performance-driven web interface built using modern frontend design rules.">
+    <meta property="og:image" content="images/enjoyingbeach.webp">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="styles/kinspace.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <span class="logo-mark">🌐</span>
+                <h1 class="logo-text">KinSpace</h1>
+            </div>
+            
+            <nav id="primary-nav">
+                <button id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul id="nav-links">
+                    <li><a href="index.html" class="nav-item active">Feed</a></li>
+                    <li><a href="discover.html" class="nav-item">Discover</a></li>
+                    <li><a href="profile.html" class="nav-item">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="app-layout">
+        
+        <aside class="sidebar-left">
+            <section id="weather-widget" class="card">
+                <h2>Local Climate</h2>
+                <div id="weather-display">
+                    <p class="loading-text">Fetching OpenWeatherMap data...</p>
+                </div>
+            </section>
+
+            <section id="ai-sandbox" class="card">
+                <h2>Ask AI Assistant</h2>
+                <form id="ai-prompt-form">
+                    <div class="compact-form-group">
+                        <label for="ai-input">Engineering Query:</label>
+                        <input type="text" id="ai-input" placeholder="e.g. check page weight..." required>
+                    </div>
+                    <button type="submit" class="action-btn full-w-btn">Query Engine</button>
+                </form>
+                <div id="ai-response-panel"></div>
+            </section>
+        </aside>
+
+        <main id="main-feed-content">
+            <section id="composer-card" class="card">
+                <h2>Share to Kin Clan</h2>
+                <form id="client-post-form">
+                    <div class="compact-form-group">
+                        <label for="composer-text" class="visually-hidden">Post Content:</label>
+                        <textarea id="composer-text" placeholder="What is happening on your local server workspace today?" required></textarea>
+                    </div>
+                    <div class="composer-actions">
+                        <select id="composer-tag" required>
+                            <option value="announcements">Announcements</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="performance">Performance</option>
+                        </select>
+                        <button type="submit" class="action-btn">Publish Entry</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="filter-bar card">
+                <label for="tag-filter">Filter Feed:</label>
+                <select id="tag-filter">
+                    <option value="all">Show All Activity</option>
+                    <option value="announcements">Announcements</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="accessibility">Accessibility</option>
+                    <option value="performance">Performance</option>
+                </select>
+            </section>
+
+            <section id="social-feed-stream">
+                <p class="loading-text">Loading fresh posts from your clan...</p>
+            </section>
+        </main>
+
+        <aside class="sidebar-right">
+            <section id="news-feed" class="card">
+                <h2>Developer News</h2>
+                <div id="news-stream-container">
+                    <p class="loading-text">Parsing trending tech headlines...</p>
+                </div>
+            </section>
+
+            <section id="user-preferences" class="card">
+                <h2>Preferences</h2>
+                <p>Customise your experience local-side.</p>
+                <button id="theme-toggle-btn" class="action-btn">Toggle Dark Mode</button>
+            </section>
+        </aside>
+
+    </div>
+
+    <dialog id="details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Post Context Details</h3>
+                <button id="close-modal-btn" aria-label="Close dialog modal">✕</button>
+            </div>
+            <div id="modal-body-content"></div>
+        </div>
+    </dialog>
+
+    <footer id="main-footer">
+        <div class="footer-container">
+            <p>&copy; <span id="current-year"></span> KinSpace Platform. All rights reserved.</p>
+            <p>WDD 231 Final Project Module Suite.</p>
+            <nav class="footer-nav">
+                <a href="attributions.html" id="citations-link">Resource Attributions</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

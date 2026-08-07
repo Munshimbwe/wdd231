@@ -17,14 +17,16 @@ export async function weatherApiFetch(url, tempEl, condEl, iconEl, forecastEl) {
 
 function displayCurrentWeather(data, tempEl, condEl, iconEl) {
     const current = data.list[0];
-    tempEl.innerHTML = `${Math.round(current.main.temp)}&deg;C`;
+    if (tempEl) tempEl.innerHTML = `${Math.round(current.main.temp)}&deg;C`;
     
     const description = current.weather[0].description;
-    condEl.textContent = description.charAt(0).toUpperCase() + description.slice(1);
+    if (condEl) condEl.textContent = description.charAt(0).toUpperCase() + description.slice(1);
     
     const iconCode = current.weather[0].icon;
-    iconEl.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
-    iconEl.setAttribute('alt', description);
+    if (iconEl) {
+        iconEl.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
+        iconEl.setAttribute('alt', description);
+    }
 }
 
 function displayForecast(data, forecastEl) {

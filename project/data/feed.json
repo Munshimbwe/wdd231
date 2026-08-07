@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "authorName": "Alex Rivera",
+    "username": "alex_codes",
+    "profileImage": "images/profiles/arts.webp",
+    "timestamp": "10 minutes ago",
+    "postContent": "Just finished setting up our project subfolder inside the wdd231 repository! Remember to keep all file names lowercase with no spaces.",
+    "likeCount": 24,
+    "communityTag": "announcements"
+  },
+  {
+    "id": 2,
+    "authorName": "Chloe Chen",
+    "username": "chloe_design",
+    "profileImage": "images/profiles/beachwalk.webp",
+    "timestamp": "42 minutes ago",
+    "postContent": "Testing the mobile layout responsiveness. Checked at 320px width and the layout looks incredibly crisp with zero horizontal scrolling!",
+    "likeCount": 18,
+    "communityTag": "ui-ux"
+  },
+  {
+    "id": 3,
+    "authorName": "Marcus Sterling",
+    "username": "marcus_dev",
+    "profileImage": "images/profiles/beachwalk.webp",
+    "timestamp": "1 hour ago",
+    "postContent": "Pro tip for week 6: Ensure your page weight stays well under 500kB by compressing images into WebP format before committing.",
+    "likeCount": 35,
+    "communityTag": "performance"
+  },
+  {
+    "id": 4,
+    "authorName": "Sarah Jenkins",
+    "username": "sarah_j",
+    "profileImage": "images/profiles/castles.webp",
+    "timestamp": "2 hours ago",
+    "postContent": "Integrated the responsive hamburger navigation icon using clean CSS transitions. No heavy libraries or frameworks needed.",
+    "likeCount": 12,
+    "communityTag": "css-tricks"
+  },
+  {
+    "id": 5,
+    "authorName": "David Kross",
+    "username": "david_k",
+    "profileImage": "images/profiles/enjoyingbeach.webp",
+    "timestamp": "3 hours ago",
+    "postContent": "Writing the native HTML5 dialog tag for our modular popups. Accessibility out of the box makes keyboard navigation flawless.",
+    "likeCount": 29,
+    "communityTag": "accessibility"
+  },
+  {
+    "id": 6,
+    "authorName": "Elena Rostova",
+    "username": "elena_r",
+    "profileImage": "images/profiles/familybiking.webp",
+    "timestamp": "5 hours ago",
+    "postContent": "Working on the JavaScript fetch utility. Remember to wrap your asynchronous requests in try...catch blocks to handle network drops gracefully.",
+    "likeCount": 41,
+    "communityTag": "javascript"
+  },
+  {
+    "id": 7,
+    "authorName": "Jordan Blake",
+    "username": "jordan_b",
+    "profileImage": "images/profiles/familygames.webp",
+    "timestamp": "Yesterday",
+    "postContent": "Using localStorage to remember user preferences like sidebar collapse states. It makes the platform feel like a real application.",
+    "likeCount": 15,
+    "communityTag": "javascript"
+  },
+  {
+    "id": 8,
+    "authorName": "Maya Lin",
+    "username": "maya_l",
+    "profileImage": "images/profiles/familypicnic.webp",
+    "timestamp": "Yesterday",
+    "postContent": "Friendly reminder to check color contrast ratios across your custom components. High visibility ensures a positive usability rating.",
+    "likeCount": 22,
+    "communityTag": "accessibility"
+  },
+  {
+    "id": 9,
+    "authorName": "Tariq Mahmood",
+    "username": "tariq_m",
+    "profileImage": "images/profiles/gardening.webp",
+    "timestamp": "2 days ago",
+    "postContent": "Spent some time mapping out the relationship between openweathermap data and our social feeds. Can't wait to inject contextual weather widgets!",
+    "likeCount": 56,
+    "communityTag": "performance"
+  },
+  {
+    "id": 10,
+    "authorName": "Sophia Vance",
+    "username": "sophia_v",
+    "profileImage": "images/profiles/music.webp",
+    "timestamp": "2 days ago",
+    "postContent": "Adding template literals in JavaScript to render our cards helps organize dynamic templates cleanly without messy string concatenation.",
+    "likeCount": 19,
+    "communityTag": "javascript"
+  },
+  {
+    "id": 11,
+    "authorName": "Liam O'Connor",
+    "username": "liam_ok",
+    "profileImage": "images/profiles/pizza.webp",
+    "timestamp": "3 days ago",
+    "postContent": "Ensured that all form controls inside the profile page feature explicit labels and required tags to ace the development standards review.",
+    "likeCount": 14,
+    "communityTag": "performance"
+  },
+  {
+    "id": 12,
+    "authorName": "Zoe Washburne",
+    "username": "zoe_w",
+    "profileImage": "images/profiles/river.webp",
+    "timestamp": "3 days ago",
+    "postContent": "Remember to update the Final Link in your week 1 navigation bar to point directly to this week 6 folder once deployed to GitHub pages.",
+    "likeCount": 48,
+    "communityTag": "announcements"
+  },
+  {
+    "id": 13,
+    "authorName": "Carlos Santana",
+    "username": "carlos_s",
+    "profileImage": "images/profiles/soccer.webp",
+    "timestamp": "4 days ago",
+    "postContent": "Using native array methods like filter() to let users filter the social feed by community tag dynamically. Super fast runtime speeds!",
+    "likeCount": 31,
+    "communityTag": "performance"
+  },
+  {
+    "id": 14,
+    "authorName": "Amina Diop",
+    "username": "amina_d",
+    "profileImage": "images/profiles/vacation.webp",
+    "timestamp": "5 days ago",
+    "postContent": "Adding functional Open Graph tags into the document head so link previews show the KinSpace logo beautifully when shared.",
+    "likeCount": 27,
+    "communityTag": "announcements"
+  },
+  {
+    "id": 15,
+    "authorName": "Owen Williams",
+    "username": "owen_w",
+    "profileImage": "images/profiles/vacation.webp",
+    "timestamp": "1 week ago",
+    "postContent": "Completed the resource attributions unstyled subpage. Citations are fully mapped out for all structural icon packs used.",
+    "likeCount": 11,
+    "communityTag": "announcements"
+  }
+]

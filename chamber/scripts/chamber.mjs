@@ -22,7 +22,8 @@ function createCard(member) {
     picture.setAttribute('width', '340');
     picture.setAttribute('height', 'auto');
 
-    url.setAttribute('href', member.url.startsWith('http') ? member.url : `https://${member.url}`);
+    const memberUrl = member.url || '';
+    url.setAttribute('href', memberUrl.startsWith('http') ? memberUrl : (memberUrl ? `https://${memberUrl}` : '#'));
     url.setAttribute('target', '_blank');
     url.setAttribute('rel', 'noopener noreferrer');
 
@@ -120,7 +121,8 @@ export async function getMemberDataList(cards) {
             const phone = document.createElement('p');
             const url = document.createElement('a');
 
-            url.setAttribute('href', member.url.startsWith('http') ? member.url : `https://${member.url}`);
+            const memberUrl = member.url || '';
+            url.setAttribute('href', memberUrl.startsWith('http') ? memberUrl : (memberUrl ? `https://${memberUrl}` : '#'));
             url.setAttribute('target', '_blank');
             url.setAttribute('rel', 'noopener noreferrer');
 
@@ -147,8 +149,10 @@ export function initNavigation() {
 
     if (menuButton && navMenu) {
         menuButton.addEventListener('click', () => {
-            navMenu.classList.toggle('open');
-            menuButton.classList.toggle('open');
+            // Toggle the drawer class used by the site CSS and a menu-active class for the button state
+            navMenu.classList.toggle('open-drawer');
+            navMenu.classList.toggle('show');
+            menuButton.classList.toggle('menu-active');
         });
     }
 }

@@ -1,7 +1,7 @@
 export const API_CONFIG = {
     WEATHER_KEY: "cc520e6f7c509875bf7a6906c2185f46",
-    NEWS_KEY: "d3bc47b9c97b44aa99ba7947ea875ff4", // Aligned unified central tracking parameter
-    HF_AI_KEY: "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" 
+    NEWS_KEY: "d3bc47b9c97b44aa99ba7947ea875ff4",
+    HF_AI_KEY: "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", 
 };
 
 export function getFormattedDateString() {
@@ -32,6 +32,5 @@ export function incrementLocalStorageTracker(storageKeyName) {
 
 export function fetchLocalStorageValue(storageKeyName) {
     const value = localStorage.getItem(storageKeyName);
-    
     return value ? value : "0";
 }

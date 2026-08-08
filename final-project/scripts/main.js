@@ -35,8 +35,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     await fetchChildSafeNewsStream();
     
     initializeWindChillCalculator();
+    initializeAdvancedAiApiModule();
     initializeSecureOAuthHub();
     initializeAccessibilityModal();
+    
     
     initializeMemoryWallGallery();
     initializeAnimatedRegistrationForm();
@@ -432,4 +434,76 @@ function updateGlobalMetricsDisplays() {
     if (registrationContainer) {
         registrationContainer.textContent = regsCount;
     }
+}
+function askAi(userQuestion) {
+    const maxViolationsAllowed = 5;
+
+    const safetyMatrix = [
+        {
+            word: "hack",
+            response: "Security disruption keywords detected. Network access parameters remain strict for household infrastructure data safety."
+        },
+        {
+            word: "malware",
+            response: "Ecosystem integrity check triggered. System scanning tools manage threat vectors automatically."
+        },
+        {
+            word: "spam",
+            response: "Communication safety filter engaged. Redundant data streams are purged to protect inbox cleanliness."
+        },
+        {
+            word: "vulgarword",
+            response: "Respectful communication protocol violation. Content filters log phrases that degrade family-friendly environments."
+        }
+    ];
+
+    let totalViolations = parseInt(localStorage.getItem("kinspaceAI_Violations") || "0", 10);
+    if (totalViolations >= maxViolationsAllowed) {
+        return "Terminal access profile locked out due to reaching the maximum 5 safety policy violations.";
+    }
+
+    const normalizedInput = userQuestion.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim();
+    const inputWords = normalizedInput.split(/\s+/);
+
+    let matchingViolation = null;
+    for (const word of inputWords) {
+        matchingViolation = safetyMatrix.find(item => item.word === word);
+        if (matchingViolation) break;
+    }
+
+    if (matchingViolation) {
+        totalViolations += 1;
+        localStorage.setItem("kinspaceAI_Violations", totalViolations.toString());
+        
+        if (totalViolations >= maxViolationsAllowed) {
+            return `${matchingViolation.response} Persistent violation limit met (5/5). Interface locked out.`;
+        }
+        return `${matchingViolation.response} Access denied. Warning ${totalViolations}/${maxViolationsAllowed}.`;
+    }
+
+    const knowledgeBase = [
+        {
+            question: "why is the sky blue",
+            response: "The sky looks blue because gas molecules in Earth's atmosphere scatter sunlight in all directions. Short-wavelength blue light gets scattered much more than other colors because it travels in smaller, shorter waves, a phenomenon known as Rayleigh scattering."
+        },
+        {
+            question: "what is the core purpose of kinspace",
+            response: "KinSpace acts as a secure container infrastructure for households to centralize collective scheduling variables, shared list synchronization matrices, and structural family communication lines."
+        },
+        {
+            question: "how does the wind chill calculator compute data",
+            response: "It parses current thermal metrics alongside wind speed vectors using standard meteorological models, outputting a precise adjusted index if parameters fall beneath baseline thresholds."
+        }
+    ];
+
+    const matchingEntry = knowledgeBase.find(entry => {
+        const normalizedTarget = entry.question.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim();
+        return normalizedTarget === normalizedInput || normalizedInput.includes(normalizedTarget);
+    });
+
+    if (matchingEntry) {
+        return matchingEntry.response;
+    }
+
+    return "No matching response vectors found in local storage arrays. Try submitting alternate keywords.";
 }

@@ -12,12 +12,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <meta property="og:title" content="KinSpace - Secure Family Network Hub">
     <meta property="og:type" content="website">
+    <link href="https://fonts.googleapis.com"
     <meta property="og:url" content="https://munshimbwe.github.io/wdd231/final-project/index.html">
-    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/final-project/images/enjoying-beach.webp">
+    <meta property="og:image" content="https://munshimbwe.github.io/wdd231/final-project/images/vacation.webp">
     <meta property="og:description" content="An isolated, algorithmic-free digital ecosystem built strictly to preserve childhood privacy while strengthening household connections.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <meta property="og:site_name" content="KinSpace Platform">
     <link rel="stylesheet" href="styles/kinspace.css">
-    <script src="scripts/main.js" type="module" defer></script>
+    <script src="scripts/main.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -71,7 +75,7 @@
             </article>
         </div>
         <section class="tool-section">
-            <h2>Outdoor Play Safety Checker 🌦️</h2>
+            <h4>Outdoor Play Safety Checker 🌦️</h4>
             <p>Verify external safety conditions instantly using the automated index formula algorithm before authorizing children to play outside.</p>
             <div class="grid-layout weather-layout-row">
                 <div>
@@ -93,12 +97,13 @@
             </div>
         </section>
         <section class="tool-section">
-            <h2>Ask KinSpace AI Assistant 🤖</h2>
+            <h4>Ask KinSpace AI Assistant 🤖</h4>
             <p>Test our heavily moderated, child-safe assistant. This text processor immediately catches and strips out cyberbullying patterns or harmful keyword interactions.</p>
             <div class="ai-interface-container">
-                <input type="text" id="aiQuery" placeholder="Ask a question (e.g., Why is the sky blue? or test a blocked word...)">
-                <button id="askAiBtn" class="btn-submit ai-interface-submit">Submit Inquiry</button>
-                <div id="aiResponse" class="ai-interface-response-box">Waiting for input logs... 💤</div>
+                <input type="text" id="aiQueryField" placeholder="Ask a question...">
+                <button type="button" id="aiSubmitBtn">Submit Query</button>
+                <div id="aiResponsePanel">AI response text displays here.</div>
+
             </div>
         </section>
         <section class="tool-section metrics-summary-panel">

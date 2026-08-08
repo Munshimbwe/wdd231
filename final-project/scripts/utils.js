@@ -13,7 +13,7 @@ export function getFormattedDateString() {
 }
 
 export function computeWindChillIndex(celsiusTemp, kmhWind) {
-    // Correct constraint check based on official environment thresholds (Formula bounds)
+    
     if (celsiusTemp > 10 || kmhWind <= 4.8) {
         return null;
     }
@@ -32,6 +32,6 @@ export function incrementLocalStorageTracker(storageKeyName) {
 
 export function fetchLocalStorageValue(storageKeyName) {
     const value = localStorage.getItem(storageKeyName);
-    // Fixed: Return a string character value "0" to maintain strict DOM textContent compliance
+    
     return value ? value : "0";
 }

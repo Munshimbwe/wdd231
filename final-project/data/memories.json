@@ -37,7 +37,7 @@
         "category": "outdoor",
         "likes": 9,
         "caption": "Planting fresh tomato seeds and organic herbs in the raised beds.",
-        "image": "images/garden.webp"
+        "image": "images/gardening.webp"
     },
     {
         "id": "mem-006",
@@ -53,7 +53,7 @@
         "category": "outdoor",
         "likes": 22,
         "caption": "walking along the shoreline and collecting interesting shells.",
-        "image": "images/beach.webp"
+        "image": "images/beachwalk.webp"
     },
     {
         "id": "mem-008",
@@ -117,7 +117,7 @@
         "category": "outdoor",
         "likes": 45,
         "caption": "Swimming under relaxing sunshine.",
-        "image": "images/swimming.webp"
+        "image": "images/vacation.webp"
     }
 ]
    

@@ -299,7 +299,7 @@ function initializeAdvancedAiApiModule() {
         const blocked = ["hate", "violence", "weapons", "abuse"].some(w => queryText.toLowerCase().includes(w));
 
         // Fallback local key string extracted safely from your structural architecture variables
-        const hfTokenKey = "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";
+        const hfTokenKey = "#";
 
         // If your utils global config is explicitly missing, fallback to safe local parsing layout immediately
         if (!API_CONFIG || !API_CONFIG.HF_AI_KEY) {
@@ -455,9 +455,9 @@ function renderActiveCards(filter = 'all') {
         img.decoding = 'async';
         img.alt = item.title || 'Family memory';
         img.width = 480;
-        img.src = item.image || 'images/placeholder.webp';
+        img.src = item.image || 'images/baking.webp';
         // Fallback to placeholder if image fails to load
-        img.addEventListener('error', () => { img.src = 'images/placeholder.webp'; });
+        img.addEventListener('error', () => { img.src = 'images/familygames.webp'; });
 
         const title = document.createElement('h3');
         title.textContent = item.title || '';

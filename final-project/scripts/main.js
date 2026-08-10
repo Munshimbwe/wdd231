@@ -15,14 +15,21 @@ const APP_STATE = {
 
 function initializeMemoryWallGallery() {
     const viewSelector = document.getElementById('filterCategory');
+    const currentUrlPath = window.location.pathname.toLowerCase();
+
     if (viewSelector) {
         viewSelector.addEventListener('change', (e) => {
             renderActiveCards(e.target.value);
         });
     }
+
+    if (currentUrlPath.includes("index.html") || currentUrlPath.endsWith("/")) {
+        renderActiveCards();
+        return;
+    }
+
     renderActiveCards();
 }
-
 document.addEventListener("DOMContentLoaded", async () => {
     initializeGlobalTheme();
     initializeGlobalNavigation();
@@ -30,18 +37,43 @@ document.addEventListener("DOMContentLoaded", async () => {
     initializeWayfindingTracker();
     
     await loadMemoriesJsonDatabase();
-    initializeRandomSpotlightModule();
-    await fetchLiveWeatherTelemetry();
-    await fetchChildSafeNewsStream();
     
-    initializeWindChillCalculator();
-    initializeAdvancedAiApiModule();
-    initializeSecureOAuthHub();
-    initializeAccessibilityModal();
+    if (document.querySelector(".hero") && !document.querySelector(".hub-hero")) {
+        initializeRandomSpotlightModule();
+    }
     
+    if (document.getElementById("ambientTemp")) {
+        await fetchLiveWeatherTelemetry();
+    }
     
-    initializeMemoryWallGallery();
-    initializeAnimatedRegistrationForm();
+    if (document.querySelector(".metrics-summary-panel")) {
+        await fetchChildSafeNewsStream();
+    }
+    
+    if (document.getElementById("calcChillBtn")) {
+        initializeWindChillCalculator();
+    }
+    
+    if (document.getElementById("aiSubmitBtn")) {
+        initializeAdvancedAiApiModule();
+    }
+    
+    if (document.querySelector(".form-container")) {
+        initializeSecureOAuthHub();
+    }
+    
+    if (document.getElementById("openAuthModalTriggerBtn")) {
+        initializeAccessibilityModal();
+    }
+    
+    if (document.getElementById('galleryGrid') || document.getElementById('gallery') || document.querySelector('.gallery-grid')) {
+        initializeMemoryWallGallery();
+    }
+    
+    if (document.getElementById("registrationForm")) {
+        initializeAnimatedRegistrationForm();
+    }
+    
     updateGlobalMetricsDisplays();
 });
 
@@ -182,10 +214,11 @@ function initializeRandomSpotlightModule() {
         }
     });
 }
-
 async function fetchLiveWeatherTelemetry() {
     const tempDisplay = document.getElementById("ambientTemp");
     const iconDisplay = document.getElementById("weatherIcon");
+    const forecastBox = document.getElementById("threeDayForecastBox");
+    
     if (!tempDisplay) return;
 
     try {
@@ -196,25 +229,53 @@ async function fetchLiveWeatherTelemetry() {
         
         APP_STATE.liveWeatherCached = data;
         
-        if (data.list && data.list.length > 0) {
-            const currentPeriod = data.list[0];
-            tempDisplay.textContent = `${Math.round(currentPeriod.main.temp)}°C`;
-            
-            if (currentPeriod.weather && currentPeriod.weather[0]) {
-                const code = currentPeriod.weather[0].icon;
-                if (iconDisplay) {
-                    if (code.includes("01")) iconDisplay.textContent = "☀️";
-                    else if (code.includes("02") || code.includes("03") || code.includes("04")) iconDisplay.textContent = "☁️";
-                    else if (code.includes("09") || code.includes("10")) iconDisplay.textContent = "🌦️";
-                    else iconDisplay.textContent = "⛅";
-                }
-            }
-        } else {
+        if (!data.list || data.list.length === 0) {
             throw new Error("Invalid schema structure layout payload.");
+        }
+
+        const currentPeriod = data.list[0];
+        tempDisplay.textContent = `${Math.round(currentPeriod.main.temp)}°C`;
+        
+        if (currentPeriod.weather && currentPeriod.weather[0]) {
+            const currentIcon = currentPeriod.weather[0].icon;
+            if (iconDisplay) {
+                iconDisplay.src = `https://openweathermap.org/img/wn/${currentIcon}@2x.png`;
+                iconDisplay.alt = currentPeriod.weather[0].description || "Live weather condition";
+                iconDisplay.style.display = "inline-block";
+            }
+        }
+
+        if (forecastBox) {
+            forecastBox.innerHTML = "";
+            const noonForecasts = data.list.filter(item => item.dt_txt.includes("12:00:00"));
+            const targetedThreeDays = noonForecasts.slice(0, 3);
+
+            targetedThreeDays.forEach(day => {
+                const dateObj = new Date(day.dt * 1000);
+                const dayName = dateObj.toLocaleDateString('en-ZA', { weekday: 'short' });
+                const dayTemp = Math.round(day.main.temp);
+                const dayIconCode = day.weather[0].icon;
+                const dayDesc = day.weather[0].description;
+
+                const dayCard = document.createElement("div");
+                dayCard.className = "forecast-day-card";
+                dayCard.innerHTML = `
+                    <div class="forecast-date">${dayName}</div>
+                    <img src="https://openweathermap.org/img/wn/${dayIconCode}.png" alt="${dayDesc}" class="forecast-icon">
+                    <div class="forecast-temp">${dayTemp}°C</div>
+                `;
+                forecastBox.appendChild(dayCard);
+            });
         }
     } catch (err) {
         tempDisplay.textContent = "22°C";
-        if (iconDisplay) iconDisplay.textContent = "☀️";
+        if (iconDisplay) {
+            iconDisplay.src = "https://openweathermap.org/img/wn/${dayIcon}.png";
+            iconDisplay.style.display = "inline-block";
+        }
+        if (forecastBox) {
+            forecastBox.innerHTML = '<div style="color: var(--text-muted); font-size: 0.85rem;">Forecast metrics unvailable.</div>';
+        }
         console.warn("Weather telemetry module operating in safe local fallback layer mode:", err.message);
     }
 }

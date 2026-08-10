@@ -12,7 +12,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <meta property="og:title" content="KinSpace - Secure Family Network Hub">
     <meta property="og:type" content="website">
-    <link href="https://fonts.googleapis.com"
     <meta property="og:url" content="https://munshimbwe.github.io/wdd231/final-project/index.html">
     <meta property="og:image" content="https://munshimbwe.github.io/wdd231/final-project/images/vacation.webp">
     <meta property="og:description" content="An isolated, algorithmic-free digital ecosystem built strictly to preserve childhood privacy while strengthening household connections.">
@@ -26,16 +25,17 @@
 <body>
     <header>
         <nav class="navbar">
+
             <img src="images/favicon.ico" alt="kinspace logo" class="logo" width="60" height="60">
-            <a href="index.html" class="logo">KinSpace</a>
+            <a href="hub.html" class="logo">KinSpace</a>
             <button class="hamburger" id="hamburgerBtn" aria-label="Toggle structural navigation drawer">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="nav-links" id="navLinks">
-                <a href="index.html" class="active">🏠 Home</a>
-                <a href="hub.html">🖼️ Memory Wall</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="hub.html" class="active">🖼️ Memory Wall</a>
                 <a href="join.html">📝 Register</a>
                 <button id="themeToggle" class="btn-theme">🌙 Dark</button>
             </div>
@@ -78,12 +78,13 @@
             <h4>Outdoor Play Safety Checker 🌦️</h4>
             <p>Verify external safety conditions instantly using the automated index formula algorithm before authorizing children to play outside.</p>
             <div class="grid-layout weather-layout-row">
-                <div>
-                    <div class="weather-status-block">
-                        <span id="weatherIcon" class="weather-status-icon">☀️</span>
-                        <span id="ambientTemp">21°C</span>
-                    </div>
-                    <p class="weather-status-subtext">Automated environmental parameter detection loop initialized.</p>
+                <div class="weather-current-panel">
+                <span id="ambientTemp">--°C</span>
+                <img id="weatherIcon" src="" alt="" style="display: none;">
+                </div>
+                <div id="threeDayForecastBox" class="forecast-grid-container"></div>
+
+                    <p class="weather-status-subtext">Current weather conditions in Kabwe, Zambia</p>
                 </div>
                 <div>
                     <h4 class="chill-calculator-title">Wind Chill Multiplier Factor</h4>

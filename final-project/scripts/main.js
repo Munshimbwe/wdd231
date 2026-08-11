@@ -520,23 +520,26 @@ function askAi(userQuestion) {
 
     let totalViolations = parseInt(localStorage.getItem("kinspaceAI_Violations") || "0", 10);
     if (totalViolations >= maxViolationsAllowed) {
+        const inputField = document.getElementById("aiQueryField");
+        const submitBtn = document.getElementById("aiSubmitBtn");
+        if (inputField) inputField.disabled = true;
+        if (submitBtn) submitBtn.disabled = true;
         return "Terminal access profile locked out due to reaching the maximum 5 safety policy violations.";
     }
 
     const normalizedInput = userQuestion.toLowerCase().replace(/[^a-z0-9 ]/g, "").trim();
-    const inputWords = normalizedInput.split(/\s+/);
 
-    let matchingViolation = null;
-    for (const word of inputWords) {
-        matchingViolation = safetyMatrix.find(item => item.word === word);
-        if (matchingViolation) break;
-    }
+    let matchingViolation = safetyMatrix.find(item => normalizedInput.includes(item.word));
 
     if (matchingViolation) {
         totalViolations += 1;
         localStorage.setItem("kinspaceAI_Violations", totalViolations.toString());
         
         if (totalViolations >= maxViolationsAllowed) {
+            const inputField = document.getElementById("aiQueryField");
+            const submitBtn = document.getElementById("aiSubmitBtn");
+            if (inputField) inputField.disabled = true;
+            if (submitBtn) submitBtn.disabled = true;
             return `${matchingViolation.response} Persistent violation limit met (5/5). Interface locked out.`;
         }
         return `${matchingViolation.response} Access denied. Warning ${totalViolations}/${maxViolationsAllowed}.`;

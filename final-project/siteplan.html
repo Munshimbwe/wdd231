@@ -9,14 +9,16 @@
     
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    
     <meta property="og:title" content="KinSpace - Advanced Web Planning Specification">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://munshimbwe.github.io/wdd231/final-project/siteplan.html">
     <meta property="og:image" content="https://munshimbwe.github.io/wdd231/final-project/images/previewcard.webp">
     <meta property="og:description" content="Official technical planning specification document mapping the architecture, advanced API states, and responsive wireframes of the KinSpace platform.">
     <meta property="og:site_name" content="KinSpace Planning">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/siteplan.css">
     <link rel="stylesheet" href="styles/kinspace.css">
     <script src="scripts/main.js" type="module"></script>
     <script src="scripts/utils.js" type="module"></script>
@@ -46,112 +48,117 @@
             <p>Official technical layout documentation and state architecture specifications for next-generation, ad-free family social utility networks.</p>
         </section>
 
-        <!-- Mobile wireframe mockup: simple, annotated HTML wireframe for phone layouts -->
         <section class="tool-section mobile-wireframe" aria-label="Mobile wireframe">
-            <h2>Mobile Wireframe (Phone)</h2>
-            <p>This wireframe outlines the primary phone view: a compact header, prominent memory wall entry, simplified navigation, and stacked content cards optimized for small screens.</p>
-            <div class="wireframe-phone" style="max-width:360px; border:1px solid #ddd; border-radius:14px; padding:12px; background:#fff; box-shadow:0 4px 12px rgba(0,0,0,0.06);">
-                <header style="display:flex; align-items:center; justify-content:space-between;">
-                    <div style="display:flex; align-items:center; gap:8px;">
-                        <div style="width:40px; height:40px; border-radius:8px; background:linear-gradient(135deg,#e9eef8,#cfe0ff); display:flex; align-items:center; justify-content:center; font-weight:700;">KS</div>
-                        <div>
-                            <div style="font-size:14px; font-weight:700;">KinSpace</div>
-                            <div style="font-size:11px; color:#666;">Private family hub</div>
-                        </div>
-                    </div>
-                    <button aria-label="Open menu" style="border:none; background:transparent; font-size:20px;">☰</button>
-                </header>
-                <main>
-                    <div style="height:120px; border-radius:8px; background:#f6f7fb; display:flex; align-items:center; justify-content:center; color:#333;">Memory Wall Preview</div>
-                    <div style="margin-top:10px; display:flex; gap:8px;">
-                        <button style="flex:1; padding:10px; border-radius:8px; background:#0b5cff; color:#fff; border:none;">Add Memory</button>
-                        <button style="flex:1; padding:10px; border-radius:8px; background:#eef2ff; border:none; color:#0b5cff;">Explore</button>
-                    </div>
-                    <section>
-                        <div style="height:72px; border-radius:8px; background:#fff; border:1px solid #eee; display:flex; align-items:center; padding:8px; gap:8px;">
-                            <div style="width:56px; height:56px; border-radius:6px; background:#f2f4f8"></div>
-                            <div style="flex:1;">
-                                <div style="font-weight:700;">Recent Memory Title</div>
-                                <div style="font-size:12px; color:#666;">Short caption preview here</div>
-                            </div>
-                        </div>
-                    </section>
-                </main>
-                <footer style="margin-top:12px; display:flex; justify-content:space-around; color:#555; font-size:13px;">
-                    <div>Home</div>
-                    <div>Memory Wall</div>
-                    <div>Register</div>
-                    <div>Profile</div>
-                </footer>
+    <h2>Mobile Wireframe (Phone)</h2>
+    <p>This wireframe outlines the primary phone view: a compact header, prominent memory wall entry, simplified navigation, and stacked content cards optimized for small screens.</p>
+    
+    <div class="wireframe-phone">
+        <header class="wireframe-header">
+            <div class="wireframe-logo-wrapper">
+                <div class="wireframe-logo-badge">KS</div>
+                <div>
+                    <div class="wireframe-brand-title">KinSpace</div>
+                    <div class="wireframe-brand-subtitle">Private family hub</div>
+                </div>
             </div>
-            <p style="font-size:12px; color:#555; margin-top:8px;">Notes: Ensure the header is concise and clickable areas are at least 44x44px.</p>
-        </section>
-
-        <section class="tool-section">
-            <h2>1. Website Project Subject, Description &amp; Choice</h2>
-            <p><strong>The Project Subject:</strong> KinSpace — Secure, Ad-Free Private Social Utility Portal for Close-Knit Households.</p>
-            <p style="margin-top: 0.5rem;"><strong>Planned Content Description:</strong> An isolated, algorithm-free digital ecosystem consisting of distinct responsive views enabling relatives to log media posts dynamically from local JSON files, utilize live geo-targeted environmental calculations natively via external API connections, process text inquiries using machine-learning sentiment models, and execute encrypted, biometric multi-provider OAuth registrations.</p>
-            <p style="margin-top: 0.5rem;"><strong>Reason for Choice:</strong> Commercial social media channels profile children's data, introduce addictive interaction triggers, manipulate timelines with invasive ad matrices, and leave family groups open to data monetization or public scraping. KinSpace solves this crisis by closing off security perimeters, implementing active parental guardrails, and completely removing tracking cookies.</p>
-        </section>
-
-        <section class="tool-section">
-            <h2>2. Advanced Engineering Upgrades &amp; Component States</h2>
-            <div class="grid-layout" style="margin-top: 1.5rem;">
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Wayfinding Breadcrumbs</h3>
-                        <p>Dynamic DOM-injected navigation path strings (`KinSpace Root &gt; Page`) giving immediate orientation clarity to young children and elder grandparents.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>OpenWeatherMap API</h3>
-                        <p>Asynchronous telemetry streams capturing real-time weather conditions for Kabwe, Zambia, directly updating the play safety index calculation fields.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Dynamic NewsAPI Service</h3>
-                        <p>A curated, child-safe scrolling science information marquee feed that uses try-catch structures to seamlessly load an infotainment fallback string live on GitHub Pages.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Accessible HTML5 Modals</h3>
-                        <p>Keyboard-trapped, focus-managed interactive modal dialog boxes used to confirm portal configurations and authorize admin page shifts.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>HuggingFace AI Moderation</h3>
-                        <p>Asynchronous NLP sentiment processing using the BART model to run analysis on form strings, with an array-based local fallback mechanism to flag toxic entries offline.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Firebase OAuth Hub Integration</h3>
-                        <p>Multi-provider biometric identity wrappers (Google Cloud &amp; Apple ID Keychain) that allow immediate, encrypted household portal creation.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Spotlight Randomizer Engine</h3>
-                        <p>Algorithmic random array lookup selections running upon window loading tasks to present unique, nostalgia-driven family snapshots upon every dashboard refresh.</p>
-                    </div>
-                </article>
-                <article class="card">
-                    <div class="card-inner-content">
-                        <h3>Canvas Confetti Flake Burst</h3>
-                        <p>Performance-optimized keyframe animation translation arrays launching 40 floating particle strings to reward successful account creation milestones.</p>
-                    </div>
-                </article>
+            <button aria-label="Open menu" class="wireframe-menu-toggle">☰</button>
+        </header>
+        
+        <div class="wireframe-body">
+            <div class="wireframe-preview-box">Memory Wall Preview</div>
+            <div class="wireframe-action-buttons">
+                <button class="wireframe-btn-primary">Add Memory</button>
+                <button class="wireframe-btn-secondary">Explore</button>
             </div>
-        </section>
+            
+            <h2>Recent Memories</h2>
+            
+            <section class="wireframe-cards-container">
+                <div class="wireframe-memory-item">
+                    <div class="wireframe-image-placeholder"></div>
+                    <div class="wireframe-item-text">
+                        <div class="wireframe-item-title">Recent Memory Title</div>
+                        <div class="wireframe-item-caption">Short caption preview here</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer class="wireframe-footer">
+            <div>Home</div>
+            <div>Memory Wall</div>
+            <div>Register</div>
+            <div>Profile</div>
+        </footer>
+    </div>
+    <p class="wireframe-annotation-notes">Notes: Ensure the header is concise and clickable areas are at least 44x44px.</p>
+</section>
 
+<section class="tool-section">
+    <h2>1. Website Project Subject, Description &amp; Choice</h2>
+    <p><strong>The Project Subject:</strong> KinSpace — Secure, Ad-Free Private Social Utility Portal for Close-Knit Households.</p>
+    <p class="section-paragraph-spacing"><strong>Planned Content Description:</strong> An isolated, algorithm-free digital ecosystem consisting of distinct responsive views enabling relatives to log media posts dynamically from local JSON files, utilize live geo-targeted environmental calculations natively via external API connections, process text inquiries using machine-learning sentiment models, and execute encrypted, biometric multi-provider OAuth registrations.</p>
+    <p class="section-paragraph-spacing"><strong>Reason for Choice:</strong> Commercial social media channels profile children's data, introduce addictive interaction triggers, manipulate timelines with invasive ad matrices, and leave family groups open to data monetization or public scraping. KinSpace solves this crisis by closing off security perimeters, implementing active parental guardrails, and completely removing tracking cookies.</p>
+</section>
+
+<section class="tool-section">
+    <h2>2. Advanced Engineering Upgrades &amp; Component States</h2>
+    <div class="grid-layout engineering-upgrades-grid">
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Wayfinding Breadcrumbs</h3>
+                <p>Dynamic DOM-injected navigation path strings (`KinSpace Root &gt; Page`) giving immediate orientation clarity to young children and elder grandparents.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>OpenWeatherMap API</h3>
+                <p>Asynchronous telemetry streams capturing real-time weather conditions for Kabwe, Zambia, directly updating the play safety index calculation fields.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Dynamic NewsAPI Service</h3>
+                <p>A curated, child-safe scrolling science information marquee feed that uses try-catch structures to seamlessly load an infotainment fallback string live on GitHub Pages.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Accessible HTML5 Modals</h3>
+                <p>Keyboard-trapped, focus-managed interactive modal dialog boxes used to confirm portal configurations and authorize admin page shifts.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>HuggingFace AI Moderation</h3>
+                <p>Asynchronous NLP sentiment processing using the BART model to run analysis on form strings, with an array-based local fallback mechanism to flag toxic entries offline.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Firebase OAuth Hub Integration</h3>
+                <p>Multi-provider biometric identity wrappers (Google Cloud &amp; Apple ID Keychain) that allow immediate, encrypted household portal creation.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Spotlight Randomizer Engine</h3>
+                <p>Algorithmic random array lookup selections running upon window loading tasks to present unique, nostalgia-driven family snapshots upon every dashboard refresh.</p>
+            </div>
+        </article>
+        <article class="card">
+            <div class="card-inner-content">
+                <h3>Canvas Confetti Flake Burst</h3>
+                <p>Performance-optimized keyframe animation translation arrays launching 40 floating particle strings to reward successful account creation milestones.</p>
+            </div>
+        </article>
+    </div>
+</section>
         <section class="tool-section">
-            <h2>3. Multi-View Desktop Wireframe Structural Blueprint</h2>
-            <p>The desktop wireframe demonstrates large fluid screens using rows and grids, locking into a side-by-side 1fr 1fr column structure for premium symmetry:</p>
-<pre style="background: var(--light); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border); overflow-x: auto; font-family: monospace; font-size: 0.9rem;"></pre>
+    <h2>3. Multi-View Desktop Wireframe Structural Blueprint</h2>
+    <p>The desktop wireframe demonstrates large fluid screens using rows and grids, locking into a side-by-side 1fr 1fr column structure for premium symmetry:</p>
+    
+    <pre class="wireframe-blueprint-console">
 +-------------------------------------------------------------------------------------------------------------------+
 
 |  👨‍👩‍👧‍👦 KinSpace   [Wayfinding Breadcrumbs: Root &gt; Dashboard] 📰 Live News Marquee Stream   📝 Register  [🌓 Dark/Light] |
@@ -177,14 +184,13 @@
 |   |                                                           |   |                                           |   |
 |   +-----------------------------------------------------------+   +-------------------------------------------+   |
 |                                                                                                                   |
-+-------------------------------------------------------------------------------------------------------------------+| 
-[ACCESSIBILITY MODAL ACTIVE: Trapped Focus Layer Container Displaying Safe Space Session Authorization Dialog]     
-|+-------------------------------------------------------------------------------------------------------------------+| 
-© 2026 Munshimbwe Kafwanka. All rights reserved.             Platform Location Node: Kabwe, Zambia                 
-|+-------------------------------------------------------------------------------------------------------------------+
-© 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️Project Platform Location Deployment Node: 
-⚒️Kabwe, Zambia⚒️Page Last Modified: View Resource Attributions Index 
-|Watch JavaScript Functionality Video Demonstration
++-------------------------------------------------------------------------------------------------------------------+
+
+| [ACCESSIBILITY MODAL ACTIVE: Trapped Focus Layer Container Displaying Safe Space Session Authorization Dialog]     |
++-------------------------------------------------------------------------------------------------------------------+
+
+| © 2026 Munshimbwe Kafwanka. All rights reserved.             Platform Location Node: Kabwe, Zambia                 |
++-------------------------------------------------------------------------------------------------------------------+
 
 ========================================================================
 [1] TOP STICKY HEADER BOUNDARY (Height: 4.5rem / Surface Background)
@@ -210,18 +216,18 @@
 |                                                      |  (🌙 Dark)    |
 |                                                      |               |
 ========================================================================
-[3] MAIN VIEWPORT CANVAS LAYER (<main> container flow)
+[3] MAIN VIEWPORT CANVAS LAYER ( container flow)
 ========================================================================
 
 |                                                                      |
 |  KinSpace Root > Memory Wall   <-- [.wayfinding-breadcrumbs]         |
 |                                                                      |
-|  <h1>Dashboard Hub</h1>                                              |
+|  &lt;h1&gt;Dashboard Hub&lt;/h1&gt;                                              |
 |                                                                      |
 |  ------------------------------------------------------------------  |
 |  🌤️ LIVE ENVIRONMENT INFRASTRUCTURE PANEL                            |
 |  ------------------------------------------------------------------  |
-|  |  Gqeberha Region                                               |  |
+|  |  Kabwe Region                                               |  |
 |  |                                                                |  |
 |  |  [ #ambientTemp ]       [ #weatherIcon ]                       |  |
 |  |     24°C                   (⛅ High-Def PNG Image)              |  |
@@ -246,50 +252,14 @@
 |  | "The sky looks blue because gas molecules..."                  |  |
 |  | (Warning threshold status: 0/5)                                |  |
 |  ------------------------------------------------------------------  |
-|                                                                      |
-|  ------------------------------------------------------------------  |
-|  🖼️ COLLABORATIVE MEMORY WALL GRID (.gallery-grid / 1-Column Stack)  |
-|  ------------------------------------------------------------------  |
-|  |  ============================================================  |  |
-|  |  ||                                                        ||  |  |
-|  |  ||  [ img ] Aspect Ratio locked to strict 4:3 parameters ||  |  |
-|  |  ||         (object-fit: cover blocks distortion)          ||  |  |
-|  |  ||                                                        ||  |  |
-|  |  ||  <h3>Baking Day Recipe</h3>                            ||  |  |
-|  |  ||  <p>Mixing fresh metric elements into dough...</p>     ||  |  |
-|  |  ||  <p class="likes">❤️ 14 Likes</p>                      ||  |  |
-|  |  ============================================================  |  |
-|  |                                                                |  |
-|  |  ============================================================  |  |
-|  |  ||                                                        ||  |  |
-|  |  ||  [ img ] Aspect Ratio locked to strict 4:3 parameters ||  |  |
-|  |  ||                                                        ||  |  |
-|  |  ||  <h3>Family Picnic Ground</h3>                         ||  |  |
-|  |  ||  <p>Tracking local nature preserve bounds...</p>       ||  |  |
-|  |  ||  <p class="likes">❤️ 9 Likes</p>                       ||  |  |
-|  |  ============================================================  |  |
-|  ------------------------------------------------------------------  |
-|                                                                      |
-========================================================================
-[4] METRICS & FOOTER FRAMEWORK (Sticky-bottom alignment)
-========================================================================
+    </pre>
 
-|                                                                      |
-|  General Engagement: [ 23 ]       Registrations Tracker: [ 2 ]       |
-|                                                                      |
-|  © 2026 KinSpace Portal • Last Synchronized: [ lastModifiedDate ]    |
-|                                                                      |
-========================================================================
-</section>
-</main>
-    <footer>
-        <p>&copy; 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️</p>
-        <p>Project Platform Location Deployment Node: ⚒️Kabwe, Zambia⚒️</p>
-        <p class="footer-modification-text">Page Last Modified: <span id="lastModifiedDate"></span></p>
-        <p class="footer-citations-link">
-            <a href="references.html">View Resource Attributions Index</a> | 
-            <a href="https://www.loom.com/share/ed1177908b61459aa06fee5ace16d6cb" target="_blank" rel="noopener">Watch JavaScript Functionality Video Demonstration</a>
+    <footer class="site-plan-footer">
+        <p>© 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️ Project Platform Location Deployment Node: ⚒️ Kabwe, Zambia ⚒️</p>
+        <p class="footer-links-row">
+            Page Last Modified: <span id="lastModifiedDate"></span> | 
+            <a href="#">View Resource Attributions Index</a> | 
+            <a href="#">Watch JavaScript Functionality Video Demonstration</a>
         </p>
     </footer>
-</body>
-</html>
+</section>

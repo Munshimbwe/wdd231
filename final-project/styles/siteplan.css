@@ -1,0 +1,170 @@
+.wireframe-phone {
+    max-width: 360px;
+    border: 1px solid var(--border, #ddd);
+    border-radius: 14px;
+    padding: 12px;
+    background-color: var(--white, #fff);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.wireframe-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wireframe-logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wireframe-logo-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #e9eef8, #cfe0ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.wireframe-brand-title {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.wireframe-brand-subtitle {
+    font-size: 11px;
+    color: var(--text-muted, #666);
+}
+
+.wireframe-menu-toggle {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.wireframe-preview-box {
+    height: 120px;
+    border-radius: 8px;
+    background-color: var(--light, #f6f7fb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text, #333);
+}
+
+.wireframe-action-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.wireframe-btn-primary {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: var(--primary, #0b5cff);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.wireframe-btn-secondary {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #eef2ff;
+    border: none;
+    color: var(--primary, #0b5cff);
+    cursor: pointer;
+}
+
+.wireframe-memory-item {
+    height: 72px;
+    border-radius: 8px;
+    background-color: var(--white, #fff);
+    border: 1px solid var(--border, #eee);
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+}
+
+.wireframe-image-placeholder {
+    width: 56px;
+    height: 56px;
+    border-radius: 6px;
+    background-color: #f2f4f8;
+}
+
+.wireframe-item-text {
+    flex: 1;
+}
+
+.wireframe-item-title {
+    font-weight: 700;
+}
+
+.wireframe-item-caption {
+    font-size: 12px;
+    color: var(--text-muted, #666);
+}
+
+.wireframe-footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-around;
+    color: #555;
+    font-size: 13px;
+}
+
+.wireframe-annotation-notes {
+    font-size: 12px;
+    color: #555;
+    margin-top: 8px;
+}
+
+.section-paragraph-spacing {
+    margin-top: 0.5rem;
+}
+
+.engineering-upgrades-grid {
+    margin-top: 1.5rem;
+}
+.wireframe-blueprint-console {
+    background-color: var(--white, #ffffff);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border, #e2e8f0);
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: var(--text, #0f172a);
+}
+
+.site-plan-footer {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border, #e2e8f0);
+    font-size: 0.85rem;
+    color: var(--text-muted, #475569);
+    line-height: 1.6;
+}
+
+.footer-links-row {
+    margin-top: 0.25rem;
+}
+
+.footer-links-row a {
+    color: var(--primary, #4a90e2);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-links-row a:hover {
+    text-decoration: underline;
+}

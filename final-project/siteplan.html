@@ -18,8 +18,8 @@
     <meta property="og:site_name" content="KinSpace Planning">
 
     <link rel="stylesheet" href="styles/kinspace.css">
-    <script src="scripts/main.js" type="module" defer></script>
-    <script src="scripts/utils.js" type="module" defer></script>
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/utils.js" type="module"></script>
 </head>
 <body>
 
@@ -61,13 +61,13 @@
                     </div>
                     <button aria-label="Open menu" style="border:none; background:transparent; font-size:20px;">☰</button>
                 </header>
-                <main style="margin-top:12px;">
+                <main>
                     <div style="height:120px; border-radius:8px; background:#f6f7fb; display:flex; align-items:center; justify-content:center; color:#333;">Memory Wall Preview</div>
                     <div style="margin-top:10px; display:flex; gap:8px;">
                         <button style="flex:1; padding:10px; border-radius:8px; background:#0b5cff; color:#fff; border:none;">Add Memory</button>
                         <button style="flex:1; padding:10px; border-radius:8px; background:#eef2ff; border:none; color:#0b5cff;">Explore</button>
                     </div>
-                    <section style="margin-top:12px;">
+                    <section>
                         <div style="height:72px; border-radius:8px; background:#fff; border:1px solid #eee; display:flex; align-items:center; padding:8px; gap:8px;">
                             <div style="width:56px; height:56px; border-radius:6px; background:#f2f4f8"></div>
                             <div style="flex:1;">
@@ -151,7 +151,7 @@
         <section class="tool-section">
             <h2>3. Multi-View Desktop Wireframe Structural Blueprint</h2>
             <p>The desktop wireframe demonstrates large fluid screens using rows and grids, locking into a side-by-side 1fr 1fr column structure for premium symmetry:</p>
-<pre style="background: var(--light); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border); overflow-x: auto; font-family: monospace; font-size: 0.9rem;">
+<pre style="background: var(--light); padding: 1.5rem; border-radius: 4px; border: 1px solid var(--border); overflow-x: auto; font-family: monospace; font-size: 0.9rem;"></pre>
 +-------------------------------------------------------------------------------------------------------------------+
 
 |  👨‍👩‍👧‍👦 KinSpace   [Wayfinding Breadcrumbs: Root &gt; Dashboard] 📰 Live News Marquee Stream   📝 Register  [🌓 Dark/Light] |
@@ -185,3 +185,111 @@
 © 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️Project Platform Location Deployment Node: 
 ⚒️Kabwe, Zambia⚒️Page Last Modified: View Resource Attributions Index 
 |Watch JavaScript Functionality Video Demonstration
+
+========================================================================
+[1] TOP STICKY HEADER BOUNDARY (Height: 4.5rem / Surface Background)
+========================================================================
+
+|                                                                      |
+|  KinSpace [Logo]                             [ #hamburgerBtn ]       |
+|                                                [ ☰ Tapped ]          |
+|                                                                      |
+========================================================================
+[2] SLIDE-OUT PANEL DRAWER (.nav-links .open-drawer / z-index: 9999)
+========================================================================
+
+|                                                      |               |
+|  (Tapping background closes this menu via JS)       | 🏠 Home       |
+|                                                      |               |
+|                                                      | 🖼️ Memory Wall |
+|                                                      | (active class)|
+|                                                      |               |
+|                                                      | 📝 Register   |
+|                                                      |               |
+|                                                      | [themeToggle] |
+|                                                      |  (🌙 Dark)    |
+|                                                      |               |
+========================================================================
+[3] MAIN VIEWPORT CANVAS LAYER (<main> container flow)
+========================================================================
+
+|                                                                      |
+|  KinSpace Root > Memory Wall   <-- [.wayfinding-breadcrumbs]         |
+|                                                                      |
+|  <h1>Dashboard Hub</h1>                                              |
+|                                                                      |
+|  ------------------------------------------------------------------  |
+|  🌤️ LIVE ENVIRONMENT INFRASTRUCTURE PANEL                            |
+|  ------------------------------------------------------------------  |
+|  |  Gqeberha Region                                               |  |
+|  |                                                                |  |
+|  |  [ #ambientTemp ]       [ #weatherIcon ]                       |  |
+|  |     24°C                   (⛅ High-Def PNG Image)              |  |
+|  |                                                                |  |
+|  |  ------------------------------------------------------------  |  |
+|  |  [ #threeDayForecastBox ] (flex-direction: column layout)     |  |
+|  |  ------------------------------------------------------------  |  |
+|  |  | Wed  |  (🌦️ Icon)  |  22°C                                |  |  |
+|  |  | Thu  |  (☁️ Icon)  |  19°C                                |  |  |
+|  |  | Fri  |  (☀️ Icon)  |  25°C                                |  |  |
+|  |  ------------------------------------------------------------  |  |
+|  ------------------------------------------------------------------  |
+|                                                                      |
+|  ------------------------------------------------------------------  |
+|  🤖 LOCAL AI KNOWLEDGE BASE MATRIX MODULE                            |
+|  ------------------------------------------------------------------  |
+|  | [aiQueryField: "Why is the sky blue..."]                       |  |
+|  |                                                                |  |
+|  | [ aiSubmitBtn: "Submit Query" (Full Mobile Width Button) ]     |  |
+|  |                                                                |  |
+|  | [ aiResponsePanel ]                                            |  |
+|  | "The sky looks blue because gas molecules..."                  |  |
+|  | (Warning threshold status: 0/5)                                |  |
+|  ------------------------------------------------------------------  |
+|                                                                      |
+|  ------------------------------------------------------------------  |
+|  🖼️ COLLABORATIVE MEMORY WALL GRID (.gallery-grid / 1-Column Stack)  |
+|  ------------------------------------------------------------------  |
+|  |  ============================================================  |  |
+|  |  ||                                                        ||  |  |
+|  |  ||  [ img ] Aspect Ratio locked to strict 4:3 parameters ||  |  |
+|  |  ||         (object-fit: cover blocks distortion)          ||  |  |
+|  |  ||                                                        ||  |  |
+|  |  ||  <h3>Baking Day Recipe</h3>                            ||  |  |
+|  |  ||  <p>Mixing fresh metric elements into dough...</p>     ||  |  |
+|  |  ||  <p class="likes">❤️ 14 Likes</p>                      ||  |  |
+|  |  ============================================================  |  |
+|  |                                                                |  |
+|  |  ============================================================  |  |
+|  |  ||                                                        ||  |  |
+|  |  ||  [ img ] Aspect Ratio locked to strict 4:3 parameters ||  |  |
+|  |  ||                                                        ||  |  |
+|  |  ||  <h3>Family Picnic Ground</h3>                         ||  |  |
+|  |  ||  <p>Tracking local nature preserve bounds...</p>       ||  |  |
+|  |  ||  <p class="likes">❤️ 9 Likes</p>                       ||  |  |
+|  |  ============================================================  |  |
+|  ------------------------------------------------------------------  |
+|                                                                      |
+========================================================================
+[4] METRICS & FOOTER FRAMEWORK (Sticky-bottom alignment)
+========================================================================
+
+|                                                                      |
+|  General Engagement: [ 23 ]       Registrations Tracker: [ 2 ]       |
+|                                                                      |
+|  © 2026 KinSpace Portal • Last Synchronized: [ lastModifiedDate ]    |
+|                                                                      |
+========================================================================
+</section>
+</main>
+    <footer>
+        <p>&copy; 2026 Munshimbwe Kafwanka. All rights reserved. 🛡️</p>
+        <p>Project Platform Location Deployment Node: ⚒️Kabwe, Zambia⚒️</p>
+        <p class="footer-modification-text">Page Last Modified: <span id="lastModifiedDate"></span></p>
+        <p class="footer-citations-link">
+            <a href="references.html">View Resource Attributions Index</a> | 
+            <a href="https://www.loom.com/share/ed1177908b61459aa06fee5ace16d6cb" target="_blank" rel="noopener">Watch JavaScript Functionality Video Demonstration</a>
+        </p>
+    </footer>
+</body>
+</html>

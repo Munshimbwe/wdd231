@@ -467,3 +467,134 @@ dialog[open]::backdrop {
   border: 1px solid var(--border-dark);
   border-radius: 6px;
 }
+.visitor-alert-banner {
+    background-color: var(--primary, #4A90E2);
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body.dark-theme .visitor-alert-banner {
+    background-color: var(--border, #4A5568);
+    color: var(--text, #EAEDED);
+}
+
+.info-card {
+    background-color: var(--white, #ffffff);
+    border: 1px solid var(--border, #E2E8F0);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card-top-title {
+    background-color: rgba(74, 144, 226, 0.08);
+    color: var(--primary, #4A90E2);
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border, #E2E8F0);
+}
+
+body.dark-theme .card-top-title {
+    background-color: rgba(93, 173, 226, 0.1);
+    color: var(--primary, #5DADE2);
+}
+
+.info-card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.info-card-text p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text, #333333);
+}
+
+.btn-learn-more {
+    align-self: flex-start;
+    background-color: var(--primary, #4A90E2);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn-learn-more:hover {
+    opacity: 0.9;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.modal-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window {
+    background-color: var(--white, #ffffff);
+    border: 1px solid var(--border, #E2E8F0);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.modal-active .modal-window {
+    transform: translateY(0);
+}
+
+#modalTitle {
+    color: var(--primary, #4A90E2);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#modalBody {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text, #333333);
+    margin-bottom: 1.5rem;
+}
+
+.btn-submit {
+    background-color: var(--secondary, #2ECC71);
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}

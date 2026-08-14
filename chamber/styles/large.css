@@ -93,3 +93,27 @@
         padding: 0 !important;
     }
 }
+.discover-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+}
+
+.card-split-body {
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+    flex: 1;
+}
+
+.info-card-img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border, #E2E8F0);
+    flex-shrink: 0;
+}
+

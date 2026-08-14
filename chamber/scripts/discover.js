@@ -78,3 +78,92 @@ function initializeAccessibilityModal() {
         if (e.key === "Escape" && modalOverlay.classList.contains("modal-active")) dismissModalWindow();
     });
 }
+let landmarksCacheData = [];
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadLandmarksDatabase();
+    initializeModalSystem();
+});
+
+async function loadLandmarksDatabase() {
+    const gridContainer = document.getElementById("discoverContentGrid");
+    if (!gridContainer) return;
+
+    try {
+        const response = await fetch("data/landmarks.json");
+        if (!response.ok) throw new Error("Database connectivity dropout exception.");
+        landmarksCacheData = await response.json();
+        
+        renderLandmarksCards(landmarksCacheData);
+    } catch (error) {
+        console.error("Landmarks runtime pipeline block error:", error);
+        gridContainer.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2rem; color:red;">⚠️ Failed to load local community landmark assets.</div>`;
+    }
+}
+
+function renderLandmarksCards(items) {
+    const gridContainer = document.getElementById("discoverContentGrid");
+    if (!gridContainer) return;
+
+    gridContainer.innerHTML = "";
+    
+    items.forEach(item => {
+        const cardSection = document.createElement("section");
+        cardSection.className = "info-card";
+        cardSection.innerHTML = `
+            <h2 class="card-top-title">${item.title}</h2>
+            <div class="card-split-body">
+                <img src="${item.image}" alt="${item.alt}" class="info-card-img" loading="lazy" width="400" height="300">
+                <div class="info-card-text">
+                    <p>${item.description}</p>
+                    <button class="btn-learn-more" data-modal-target="${item.id}">Learn More</button>
+                </div>
+            </div>
+        `;
+        gridContainer.appendChild(cardSection);
+    });
+}
+
+function initializeModalSystem() {
+    const gridContainer = document.getElementById("discoverContentGrid");
+    const overlay = document.getElementById("infoModalOverlay");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalBody = document.getElementById("modalBody");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    if (!gridContainer || !overlay || !modalTitle || !modalBody || !closeBtn) return;
+
+    gridContainer.addEventListener("click", (e) => {
+        const buttonTrigger = e.target.closest(".btn-learn-more");
+        if (!buttonTrigger) return;
+
+        const lookupId = buttonTrigger.getAttribute("data-modal-target");
+        const targetedRecord = landmarksCacheData.find(item => item.id === lookupId);
+
+        if (targetedRecord) {
+            modalTitle.textContent = targetedRecord.title;
+            modalBody.textContent = targetedRecord.detailedContext || targetedRecord.description;
+            
+            overlay.setAttribute("aria-hidden", "false");
+            overlay.classList.add("modal-active");
+            closeBtn.focus();
+        }
+    });
+
+    const collapseModal = () => {
+        overlay.setAttribute("aria-hidden", "true");
+        overlay.classList.remove("modal-active");
+    };
+
+    closeBtn.addEventListener("click", collapseModal);
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) collapseModal();
+    });
+    
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && overlay.classList.contains("modal-active")) {
+            collapseModal();
+        }
+    });
+}
+

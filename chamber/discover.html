@@ -37,116 +37,24 @@
         </ul>
     </nav>
 
-    <main>
-        <h1>Discover Our Community Landmarks</h1>
-        
-        <div id="visitTrackingMessage" class="visitor-alert-banner">
-            Initializing tracking metrics...
-        </div>
-        
-        <div class="discover-content">
-            
-            <section class="info-card">
-                <h2 class="card-top-title">Local History Hub</h2>
-                <div class="card-split-body">
-                    <img src="images/kabweskull.webp" alt="Historic Kabwe architecture thumbnail" class="info-card-img" loading="lazy" width="400" height="300">
-                    <div class="info-card-text">
-                        <p>Founded in the late 19th century, Kabwe, also known as Broken Hill Man city, named after the discovery of a kabwe 1 skull (commonly called "Broken Hill Man"), quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development. It is connected by railway line, and great north road. It is hub of economic activity, both formal and informal.</p>
-                        <button class="btn-learn-more" data-modal-target="history">Learn More</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="info-card">
-                <h2 class="card-top-title">Current Demographics</h2>
-                <div class="card-split-body">
-                    <img src="images/cuisine.webp" alt="Marketplace workforce thumbnail" class="info-card-img" loading="lazy" width="400" height="300">
-                    <div class="info-card-text">
-                        <p>Home to over 228 598 residents, our area boasts a highly diverse professional marketplace with an annual growth rating exceeding national benchmarks.</p>
-                        <button class="btn-learn-more" data-modal-target="demographics">Learn More</button>
-                    </div>
-                </div>
-            </section>
-
-            
-
-            <section class="info-card">
-                <h2 class="card-top-title">Broken Hill Man Monument</h2>
-                <div class="card-split-body">
-                    <img src="images/brokenmonument.webp" alt="Broken Hillman Monument" class="info-card-img" loading="lazy" width="400" height="300">
-                    <div class="info-card-text">
-                        <p>This monument was erected to commemorate a Landmark Archaeological Discovery: It makes the June 21 1921 discovery of the Kabwe 1 skull (commonly called "Broken Hill Man"). Discovered by the African miners who delved ever so deep to mine lead and zinc.</p>
-                        <button class="btn-learn-more" data-modal-target="events">Learn More</button>
-                    </div>
-                </div>
-            </section>
-
-        
-            <section class="info-card">
-                <h2 class="card-top-title">Mulungushi Dam</h2>
-                <div class="card-split-body">
-                    <img src="images/mulungushi-dam.webp" alt="Breathtaking Mulungushi Dam" loading="lazy" width="400" height="300" class="info-card-img">
-                    <div class="info-card-text">
-                        <p>Constructed by Broken Development Company. located 50 kilometres southeast of kabwe.</p>
-                        <button class="btn-learn-more" data-modal-target="dam">Learn More</button>
-                    </div>
-                </div>
-            </section>
-            <section class="info-card">
-                <h2 class="card-top-title">Prayer Mountain</h2>
-                <div class="card-split-body">
-                    <img src="images/kafulamase-mountain-also.webp" alt="Scenic Mountain Landscape and Recreation Fields" loading="lazy" width="400" height="300" class="info-card-img">
-                    <div class="info-card-text">
-                        <p>Explore panoramic hiking trails and eco-tourism tracks scaling scenic summits designed for premium regional outdoor adventure operations.</p>
-                        <button class="btn-learn-more" data-modal-target="mountain">Learn More</button>
-                    </div>
-                </div>
-            </section>
-            <section class="info-card">
-                <h2 class="card-top-title">River Boat Activities</h2>
-                <div class="card-split-body">
-                    <img src="images/boat-cruise.webp" alt="Local river boat cruise" loading="lazy" width="400" height="300" class="info-card-img">
-                    <div class="info-card-text">
-                        <p>Relax with premium weekend sunset canoeing operating along our central commercial river channels.</p>
-                        <button class="btn-learn-more" data-modal-target="cruise">Learn More</button>
-                    </div>
-                </div>
-            </section>
-
-            
-            <section class="info-card">
-                <h2 class="card-top-title">Boat Cruise on Water Bodies</h2>
-                <div class="card-split-body">
-                    <img src="images/boat-rides.webp" alt="Riverfront for river activities" loading="lazy" width="400" height="300" class="info-card-img">
-                    <div class="info-card-text">
-                        <p>These two rivers flow into the western end of the Luangwa Rift valley just over 50km south east of kabwe.</p>
-                        <button class="btn-learn-more" data-modal-target="riverfront">Learn More</button>
-                    </div>
-                </div>
-            </section>
-
-            
-            <section class="info-card">
-                <h2 class="card-top-title">Kabwe Safari Lodge</h2>
-                <div class="card-split-body">
-                    <img src="images/nature.webp" alt="Nature Reserve Wilderness Path" loading="lazy" width="400" height="300" class="info-card-img">
-                    <div class="info-card-text">
-                        <p>A modern lodge built with a side of nature for those who wuold love to express nature in comfortable surroundings.</p>
-                        <button class="btn-learn-more" data-modal-target="nature">Learn More</button>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
+        <main>
+    <h1>Discover Our Community Landmarks</h1>
     
-    <div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
-        <div class="modal-window">
-            <h3 id="modalTitle">Modal Details Header</h3>
-            <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
-            <button id="closeModalBtn" class="btn-submit">Dismiss Details</button>
-        </div>
+    <div id="visitTrackingMessage" class="visitor-alert-banner">
+        Initializing tracking metrics...
     </div>
+    
+    <div class="discover-content" id="discoverContentGrid"></div>
+</main>
+
+<div id="infoModalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-window">
+        <h3 id="modalTitle">Modal Details Header</h3>
+        <p id="modalBody">Detailed descriptive text context placeholder logs...</p>
+        <button id="closeModalBtn" class="btn-submit">Dismiss Details</button>
+    </div>
+</div>
+
     
     <footer>
         <div class="footer-contact">

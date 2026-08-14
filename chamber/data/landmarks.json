@@ -1,0 +1,66 @@
+[
+    {
+        "id": "history",
+        "title": "Local History Hub",
+        "image": "images/kabweskull.webp",
+        "alt": "Historic Kabwe architecture thumbnail",
+        "description": "Founded in the late 19th century, Kabwe, also known as Broken Hill Man city, named after the discovery of a kabwe 1 skull (commonly called \"Broken Hill Man\"), quickly expanded into a vital crossroad of industrial commerce, agricultural innovation, and cultural development. It is connected by railway line, and great north road. It is hub of economic activity, both formal and informal.",
+        "detailedContext": "Detailed expansion regarding the late 19th century industrial baseline transformation metrics, lead-zinc exploration networks, and administrative geographic routing blueprints."
+    },
+    {
+        "id": "demographics",
+        "title": "Current Demographics",
+        "image": "images/cuisine.webp",
+        "alt": "Marketplace workforce thumbnail",
+        "description": "Home to over 228 598 residents, our area boasts a highly diverse professional marketplace with an annual growth rating exceeding national benchmarks.",
+        "detailedContext": "Comprehensive breakdown statistics parsing residential population curves, occupational marketplace allocations, and annualized trade margin benchmark vectors."
+    },
+    {
+        "id": "events",
+        "title": "Broken Hill Man Monument",
+        "image": "images/brokenmonument.webp",
+        "alt": "Broken Hillman Monument",
+        "description": "This monument was erected to commemorate a Landmark Archaeological Discovery: It makes the June 21 1921 discovery of the Kabwe 1 skull (commonly called \"Broken Hill Man\"). Discovered by the African miners who delved ever so deep to mine lead and zinc.",
+        "detailedContext": "Deep historical records documenting the operational shifts of June 21, 1921, geological depth measurements, and global museum categorization attributions."
+    },
+    {
+        "id": "dam",
+        "title": "Mulungushi Dam",
+        "image": "images/mulungushi-dam.webp",
+        "alt": "Breathtaking Mulungushi Dam",
+        "description": "Constructed by Broken Development Company. located 50 kilometres southeast of kabwe.",
+        "detailedContext": "Engineering schematics tracing hydro-electric container bounds, resource routing loops, and secondary recreational tracking infrastructures."
+    },
+    {
+        "id": "mountain",
+        "title": "Prayer Mountain",
+        "image": "images/kafulamase-mountain-also.webp",
+        "alt": "Scenic Mountain Landscape and Recreation Fields",
+        "description": "Explore panoramic hiking trails and eco-tourism tracks scaling scenic summits designed for premium regional outdoor adventure operations.",
+        "detailedContext": "Detailed altitude profiling parameters, mapping coordinates for eco-tourism path systems, and emergency trail communication vectors."
+    },
+    {
+        "id": "cruise",
+        "title": "River Boat Activities",
+        "image": "images/boat-cruise.webp",
+        "alt": "Local river boat cruise",
+        "description": "Relax with premium weekend sunset canoeing operating along our central commercial river channels.",
+        "detailedContext": "Schedules, safety parameters for seasonal water current indices, canoe port lease values, and logistics protocols."
+    },
+    {
+        "id": "riverfront",
+        "title": "Boat Cruise on Water Bodies",
+        "image": "images/boat-rides.webp",
+        "alt": "Riverfront for river activities",
+        "description": "These two rivers flow into the western end of the Luangwa Rift valley just over 50km south east of kabwe.",
+        "detailedContext": "Geographic analysis tracking water table flows feeding straight into the Western Luangwa Rift valley configurations."
+    },
+    {
+        "id": "nature",
+        "title": "Kabwe Safari Lodge",
+        "image": "images/nature.webp",
+        "alt": "Nature Reserve Wilderness Path",
+        "description": "A modern lodge built with a side of nature for those who wuold love to express nature in comfortable surroundings.",
+        "detailedContext": "Ecosystem accommodation room profiles, wilderness guide tracking patterns, and local wildlife conservation protection metrics."
+    }
+]

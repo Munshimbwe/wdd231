@@ -19,24 +19,22 @@
     <link rel="stylesheet" href="styles/large.css">
     <link rel="stylesheet" href="styles/small.css">
     <script type="module" src="scripts/directory.js"></script>
+    <script type="module" src="scripts/main.mjs"></script>
 </head>
 <body>
 
     <header>
-        <img src="images/favicon.ico" alt="Chamber of Commerce Logo" class="logo" width="40" height="40">
+        <img src="images/favicon.ico" alt="Chamber of Commerce Logo" class="logo">
         <span>Kabwe Chamber of Commerce</span>
-        <div class="header-controls">
-            <button id="dark-toggle" aria-label="Toggle Dark Mode">🌓</button>
-            <button id="menu-toggle" aria-label="Toggle Navigation Menu">☰</button>
-        </div>
+        <button id="menu-toggle">☰</button>
     </header>
 
-    <nav id="nav-menu" aria-label="Main Navigation">
+    <nav id="nav-menu">
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
             <li><a href="directory.html" class="active">Directory</a></li>
             <li><a href="join.html">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
         </ul>
     </nav>
 

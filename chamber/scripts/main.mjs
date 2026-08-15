@@ -28,11 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         getMemberDataGrid(memberGridContainer);
     }
 
-    const openModalBtn = document.querySelector('.open-modal');
-    if (openModalBtn && typeof initModals === 'function') {
-        initModals();
-    }
-
     const timestampInput = document.querySelector('#timestamp') || document.getElementById("form-timestamp");
     if (timestampInput && typeof setFormTimestamp === 'function') {
         setFormTimestamp();
@@ -91,11 +86,18 @@ function initializeChamberThemeToggle() {
 function initializeFormTimestamp() {
     const timestampField = document.getElementById("form-timestamp") || document.getElementById("timestamp");
     if (timestampField) {
-        timestampField.value = Date.now();
+        timestampField.value = new Date().toISOString();
     }
 }
 
 function initializeModalDialogs() {
+    try {
+        if (typeof initModals === 'function') {
+            initModals();
+            return;
+        }
+    } catch(e) {}
+
     const openButtons = document.querySelectorAll(".open-modal");
     const closeButtons = document.querySelectorAll(".close-modal");
 
@@ -114,3 +116,4 @@ function initializeModalDialogs() {
         });
     });
 }
+
